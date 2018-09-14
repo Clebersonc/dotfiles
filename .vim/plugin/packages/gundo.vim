@@ -3,7 +3,7 @@
 ""
 
 " Add optional plugin to 'runtimepath' without sourcing anything.
-packadd! gundo.vim
+packadd! gundo
 
 " set diff window width.
 let g:gundo_width = 30
