@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+DEFAULT="$HOME/.config/sounds/${2:-ding}.ogg"
+
+case $OSTYPE in
+  darwin*) afplay $DEFAULT ;;
+  linux*)  paplay $DEFAULT ;;
+esac &
+
+sleep 1
+
+end=$((SECONDS+${1:-}))
+
+files=()
+while IFS=  read -r -d $'\0'; do
+	files+=("$REPLY")
+done < <(find $HOME/Music -iname '*.mp3' -print0)
+
+while [ $SECONDS -lt $end ]; do
+
+	if ! ps ax | grep -v grep | grep 'mpv' > /dev/null
+	then
+	    mpv --no-video ${files[$RANDOM % ${#files[@]} ]} > /dev/null 2>&1 &
+	fi
+
+done
+
+kill $!
+wait $! 2>/dev/null

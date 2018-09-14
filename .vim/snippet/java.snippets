@@ -1,0 +1,113 @@
+###########################################################################
+#                            TEXTMATE SNIPPETS                            #
+###########################################################################
+
+snippet class "class" b
+public class ${1:`!p snip.rv = snip.basename or "untitled"`} {
+	${0:#statement}
+}
+endsnippet
+
+snippet main "method (main)" b
+public static void main(String[] args) {
+	${0:#statement}
+}
+endsnippet
+
+snippet fore "for (each)" b
+for ($1 : $2) {
+	${0:#statement}
+}
+endsnippet
+
+snippet it "it (each)" b
+for (${1:String} ${2:s}: $3) {
+	System.out.println(${2/\w+\s*/\l$0/});
+}
+
+endsnippet
+snippet for "for" b
+for ($1; $2; $3) {
+	${0:#statement}
+}
+endsnippet
+
+snippet if "if" b
+if ($1){
+	${0:#statement}
+}
+endsnippet
+
+snippet ifelse "if else" b
+if ($1){
+	${2:#statement}
+} else {
+	${0:#statement}
+}
+endsnippet
+
+snippet elseif "else if" b
+if ($1){
+	${2:#statement}
+} else if ($3) {
+	${0:#statement}
+}
+endsnippet
+
+
+snippet print "print" b
+System.out.print("$0");
+endsnippet
+
+snippet sout "println" b
+System.out.println("$0");
+endsnippet
+
+snippet soutv "println"  b
+System.out.println("${1:VarName} = " + ${1/\w+\s*/\l$0/} );
+endsnippet
+
+snippet switch "switch" b
+switch ($1){
+	${0:#statement}
+}
+endsnippet
+
+snippet while "while" b
+while ($1){
+	${0:#statement}
+}
+endsnippet
+
+snippet __ "constructor"
+${1:public }${2:`!p snip.rv = snip.basename or "ClassName"`}($3) {
+}
+endsnippet
+
+snippet getset "getter & setter"
+public ${1:void} get${2:VarName}() { return this.${2/\w+\s*/\l$0/}; }
+public void set$2($1 ${2/\w+\s*/\l$0/}) { this.${2/\w+\s*/\l$0/} = ${2/\w+\s*/\l$0/}; }
+
+endsnippet
+
+snippet try "try-catch block"
+try {
+    ${VISUAL}$1
+} catch (Exception e) {
+	System.out.println("Exception = " + e);
+}
+endsnippet
+
+snippet catch "catch block"
+catch (${1:Exception} e) {
+    ${VISUAL}$3
+}
+endsnippet
+
+snippet finally "finally block (try-catch)"
+finally {
+    ${VISUAL}$3
+}
+endsnippet
+
+# vim:ft=sh:

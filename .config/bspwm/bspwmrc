@@ -1,0 +1,70 @@
+#! /bin/sh
+
+#### WORKSPACES AND BORDERS ####
+
+#Monitor allocation and their workspaces
+#bspc monitor -d Terminal Qutebrowser Thunar
+bspc monitor -d term web files design office system
+#bspc monitor -d I II III IV V
+
+#Border gaps,width, and padding
+bspc config border_width         0
+bspc config window_gap          25
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config top_padding          20
+bspc config bottom_padding       20
+bspc config left_padding         20
+bspc config right_padding        20
+
+bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a qutebrowser desktop='^2' follow=on
+bspc rule -a Thunar desktop='^3' follow=on
+bspc rule -a Typora desktop='^4' follow=on
+bspc rule -a Inkscape desktop='^4' follow=on
+bspc rule -a Gimp-2.10 desktop='^5'follow=on
+bspc rule -a mpv desktop='^5'follow=on
+bspc rule -a Lxappearence desktop='^6'follow=on
+bspc rule -a vimiv desktop='^6'follow=on
+
+#Focus on pointer
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
+
+#sxhkd &
+
+#bspc monitor -d I II III IV V VI VII VIII IX X
+
+#bspc config border_width         2
+#bspc config window_gap          12
+#
+#bspc config split_ratio          0.52
+#bspc config borderless_monocle   true
+#bspc config gapless_monocle      true
+#
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+#### AUTOSTART ####
+
+sxhkd &
+compton &
+xset -b & #For annoying beeping sounds
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+volumeicon &
+#nm-applet &
+polybar top &
+polybar bottom &
+#pulseaudio &
+feh --bg-fill ~/Pictures/wallpaper/dark.jpg &
+unclutter -idle 1 -jitter 2 -root &
+dunst &
+setxkbmap -option caps:swapescape
+#eclimd -b
+xautolock -time 10 -locker "betterlockscreen -l"
+

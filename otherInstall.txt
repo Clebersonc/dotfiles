@@ -1,0 +1,11 @@
+nodejs
+	webtorrent
+
+games
+	gnome-chess, engine fruit
+	nethack4
+	godot
+	radium
+
+python
+	vint

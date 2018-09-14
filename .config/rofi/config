@@ -1,0 +1,41 @@
+#define r_bg   #2f343f
+#define r_fg   #f3f4f5
+#define r_hlfg #9575cd
+
+! rofi.separator-style: solid
+!rofi.sidebar-mode: false
+rofi.bw: 0
+rofi.columns: 1
+rofi.modi drun
+
+!rofi.yoffset: 5
+rofi.opacity: 70
+rofi.fake-transparency: false
+! rofi.location: 0
+! rofi.width: 20
+rofi.font: System San Francisco Display 25
+
+!!va5647
+rofi.location:      0
+rofi.width:         200
+rofi.padding:       300
+rofi.borderwidth:   2
+rofi.lines:         5
+rofi.bordercolor:   $r_bg
+rofi.highlightbg:   $r_bg
+rofi.background:    $r_bg
+rofi.highlightfg:   $r_bg
+rofi.foreground:    $r_fg
+rofi.levenshtein-sort: true
+
+!rofi.color-enabled: true
+! Color scheme for normal row
+rofi.color-normal: argb:00000000,  #D8DEE9 , argb:00000000,  #201e1e	,  #D8DEE0
+! Color scheme for urgent row
+rofi.color-urgent: argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
+! Color scheme for active row
+rofi.color-active: argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
+! Color scheme window
+rofi.color-window: argb:ce222222,  #000000 ,  #696969
+! Separator style (none, dash, solid)
+rofi.separator-style: solid
