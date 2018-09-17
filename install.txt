@@ -39,7 +39,7 @@ graphicsmagick
 gucharmap
 gvfs
 highlight
-htop
+htop-vim-solarized
 hunspell-pt-br
 i3lock-fancy-git
 inkscape
@@ -48,12 +48,11 @@ libreoffice-fresh-pt-br
 libspotify
 libva-mesa-driver
 libva-utils
-light-locker
-lightdm-gtk-greeter-settings
 linux-headers
 lxappearance
 lynx
 mesen
+midori
 mlocate
 mpv
 mtpfs
@@ -85,6 +84,7 @@ sdcv
 simple-mtpfs-git
 spek
 spotifyd-pulseaudio
+steamcmd
 sxhkd
 telegram-cli-git
 the_silver_searcher
