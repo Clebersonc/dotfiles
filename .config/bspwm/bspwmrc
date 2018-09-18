@@ -55,16 +55,17 @@ bspc config pointer_follows_focus true
 sxhkd &
 compton &
 xset -b & #For annoying beeping sounds
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-volumeicon &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#volumeicon &
 #nm-applet &
 polybar top &
 polybar bottom &
-#pulseaudio &
-feh --bg-fill ~/Pictures/wallpaper/dark.jpg &
+pulseaudio &
+#feh --bg-fill ~/Pictures/wallpaper/dark.jpg &
 unclutter -idle 1 -jitter 2 -root &
 dunst &
 setxkbmap -option caps:swapescape
 #eclimd -b
 xautolock -time 10 -locker "betterlockscreen -l"
+#alacritty
 

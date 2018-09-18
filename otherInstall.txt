@@ -1,3 +1,23 @@
+aur
+	nerd-fonts-dejavu-complete
+	cava
+	cht.sh
+	betterlockscreen
+	i3lock-fancy-git
+	pmount
+	polybar
+	rarcrack
+	rpl
+	rtv
+	simple-mtpfs-git
+	spotifyd-pulseaudio
+	telegram-cli-git
+	yaourt
+	dasht
+	ddgr
+	eclim
+	libspotify
+
 nodejs
 	webtorrent
 
