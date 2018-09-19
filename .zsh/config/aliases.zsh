@@ -12,7 +12,7 @@ alias cp='cp --interactive --verbose'
 alias ln='ln --interactive --verbose'
 alias mkdir='mkdir -p' # Make parentes.
 alias dirs='dirs -v -p' # Print directory stack to use with '..' function.
-alias ls='ls --almost-all --classify --color=always --group-directories-first'
+alias ls='ls --almost-all --classify --color=always --group-directories-first --ignore=.pki --ignore=.thumbnails --ignore=.icons --ignore=.gtkrc-2.0 --ignore=.esd_auth --ignore=eclipse-workspace --ignore=.npm --ignore=.gnupg --ignore=.ssh --ignore=.tooling --ignore=.eclim --ignore=.gradle --ignore=.swt --ignore=.eclipse --ignore=.npmrc --ignore=workbench.xmi --ignore=.fasd --ignore=.fehbg --ignore=Xauthority --ignore=.gitmodules --ignore=.dircolors'
 alias lsd="command ls -A --classify | grep '/' | column"
 alias lsf='command ls -A --classify | grep --invert-match '/$' | column'
 alias cls='clear;ls' # clear and list files.

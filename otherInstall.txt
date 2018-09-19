@@ -1,3 +1,20 @@
+pacman
+	calibre
+	gimp
+	gradle
+	gucharmap
+	hunspell-pt-br
+	inkscape
+	libreoffice-fresh-pt-br
+	qutebrowser
+	steamcmd
+	typora
+	youtube-viewer
+	android-tools
+	midori
+	rclone
+	openssh
+
 aur
 	nerd-fonts-dejavu-complete
 	cava
@@ -17,6 +34,9 @@ aur
 	ddgr
 	eclim
 	libspotify
+	mesen
+	htop-vim
+	arch-wiki-cli
 
 nodejs
 	webtorrent

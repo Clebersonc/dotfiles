@@ -1,3 +1,8 @@
+# execute startx when system boot
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+
 # Compile lesskey file if compile is needed.
 if ([[ ! -f $LESSKEY ]] || [[ $LESSKEYRC -nt $LESSKEY ]]) {
 	lesskey -o $LESSKEY $LESSKEYRC

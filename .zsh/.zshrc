@@ -5,7 +5,6 @@ foreach piece (
 	prompt.zsh
 	settings.zsh
 #	tmux.zsh
-	 multiplexer.zsh
 	functions.zsh
 	aliases.zsh
 	widgets.zsh

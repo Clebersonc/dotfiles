@@ -54,13 +54,18 @@ c.qt.highdpi = False
 #   - right
 c.tabs.position = 'bottom'
 
+c.fonts.completion.entry = '11pt monospace'
+c.fonts.completion.category = '11pt monospace'
+c.fonts.statusbar = '10pt monospace'
+c.fonts.tabs = '10pt DejaVuSans Nerd Font'
+c.fonts.hints = '11pt DejaVuSans Nerd Font'
+
 # Bindings for normal mode
-config.bind(',a', 'hint links spawn tilix -p Quake -q -a app-new-window -e mpv --pause --ytdl-format 140 {hint-url} ')
+config.bind(',a', 'hint links spawn mpv --no-video --ytdl-format 140 {hint-url} ')
 config.bind(',d', 'spawn --userscript dict')
 config.bind(',e', 'spawn --userscript exec')
 config.bind(',r', 'spawn --userscript readability')
-config.bind(',v', 'hint links spawn mpv --pause --ytdl-format 18 {hint-url}')
-config.bind(',w', 'hint links spawn tilix --maximize -e w3m {hint-url}')
+config.bind(',v', 'hint links spawn mpv --ytdl-format 18 {hint-url}')
 config.bind('<F2>', 'set-cmd-text -s :open -t')
 config.bind('<Shift-F2>', 'set-cmd-text -s :open')
 config.bind('<F9>', 'scroll-page 0 1')
