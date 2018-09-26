@@ -40,3 +40,15 @@
  [submodule ".vim/pack/bundle/start/startify"]
  	path = .vim/pack/bundle/start/startify
  	url = https://github.com/mhinz/vim-startify
+ [submodule ".vim/pack/bundle/opt/textbeat"]
+ 	path = .vim/pack/bundle/opt/textbeat
+ 	url = https://github.com/flipcoder/vim-textbeat
+[submodule ".zsh/plugins/zsh-autosuggestions"]
+ 	path = .zsh/plugins/zsh-autosuggestions
+ 	url = https://github.com/zsh-users/zsh-autosuggestions
+ [submodule ".zsh/plugins/pure"]
+ 	path = .zsh/plugins/pure
+ 	url = https://github.com/sindresorhus/pure
+ [submodule ".zsh/plugins/zsh-autopair"]
+ 	path = .zsh/plugins/zsh-autopair
+ 	url = https://github.com/hlissner/zsh-autopair
