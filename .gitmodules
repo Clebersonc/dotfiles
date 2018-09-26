@@ -49,3 +49,9 @@
 [submodule ".vim/pack/bundle/start/startify"]
 	path = .vim/pack/bundle/start/startify
 	url = https://github.com/mhinz/vim-startify
+[submodule "/home/ctroy/.vim/pack/bundle/textbeat"]
+	path = /home/ctroy/.vim/pack/bundle/textbeat
+	url = https://github.com/flipcoder/textbeat
+[submodule "/home/ctroy/.vim/pack/bundle/opt/textbeat"]
+	path = /home/ctroy/.vim/pack/bundle/opt/textbeat
+	url = https://github.com/flipcoder/textbeat

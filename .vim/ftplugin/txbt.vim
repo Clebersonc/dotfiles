@@ -1,1 +1,1 @@
-packadd vim-textbeat
+packadd textbeat
