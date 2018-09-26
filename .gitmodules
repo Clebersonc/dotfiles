@@ -1,3 +1,0 @@
-[submodule ".vim/pack/bundle/opt/textbeat"]
-	path = .vim/pack/bundle/opt/textbeat
-	url = https://github.com/flipcoder/vim-textbeat
