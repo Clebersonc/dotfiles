@@ -14,6 +14,9 @@ pacman
 	midori
 	rclone
 	openssh
+	mednafen
+	timidity++
+	timidity-freepats
 
 aur
 	nerd-fonts-dejavu-complete
@@ -37,6 +40,10 @@ aur
 	mesen
 	htop-vim
 	arch-wiki-cli
+	nethack4
+	googler
+	buku
+	grip
 
 nodejs
 	webtorrent
@@ -49,3 +56,6 @@ games
 
 python
 	vint
+
+github
+	https://github.com/flipcoder/textbeat

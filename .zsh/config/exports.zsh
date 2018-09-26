@@ -10,10 +10,8 @@ path=(
 	$path
 )
 
-#source "$HOME/.cache/wal/colors.sh"
-
 # Term
-#export TERM='rxvt-unicode-256color'
+export TERM='xterm-256color'
 
 # default editor
 export EDITOR=nvim
@@ -31,7 +29,7 @@ export GPG_TTY=$(tty)
 path=($path $HOME/.local/share/bin{,/external})
 
 # java class path
-export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:jre/bin/java::")
 
 # Android SDK
 export ANDROID_HOME="$HOME/Library/Android/sdk"

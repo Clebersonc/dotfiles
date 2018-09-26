@@ -5,10 +5,6 @@
 " tnoremap <silent> <C-z> <C-\><C-n>:call mappings#normal#terminal#()<Enter>
 ""
 function! mappings#normal#terminal#() abort
-	" Compatibity with statusline search indicator.
-	if &hlsearch
-		set nohlsearch
-	endif
 
 	if !has('nvim')
 		return v:false

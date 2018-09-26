@@ -31,14 +31,6 @@ function! statusline#filetypesymbol() abort
 	return WebDevIconsGetFileTypeSymbol()
 endfunction
 
-function! statusline#hlsearch() abort
-	if !&hlsearch
-		return ''
-	endif
-
-	return searchindicator#print() . ' ' . ' '
-endfunction
-
 function! statusline#spell() abort
 	if !&spell
 		return ' ' . ' '

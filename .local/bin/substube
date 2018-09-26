@@ -1,0 +1,29 @@
+#!/bin/bash
+function sub_youtube () {
+	local name=$1
+	local channel="https://www.youtube.com/channel/$2/videos"
+	local last=$3
+	local url=$(curl $channel)
+	local video=$(echo "$url" | grep yt-lockup-title | sed -n 1p | sed 's/.*title="//g' | sed 's/"  aria.*//g')
+	local current=$(echo "$video" | sed 's/ /_/g')
+	local url_download=$(echo "$url" | grep yt-lockup-title | sed -n 1p | sed 's/.*href="//g' | sed 's/" rel=.*//g')
+
+	if [[ "$url_download" == '' ]]; then
+		return 0
+	fi
+	if [[ "$last" != "$current" ]]; then
+		~/.local/bin/rpl $last $current ~/Videos/subscriptions.txt
+		if [[ $4 == "subs" ]]; then
+			youtube-dl -f 18 --embed-sub --write-auto-sub "https://www.youtube.com$url_download"
+		else
+			youtube-dl -f 18 "https://www.youtube.com$url_download"
+		fi
+
+		DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -t 0 "New Video" "Watch <b>$video</b> from <i>$name</i>."
+	fi
+
+}
+while read -r name channel last subs
+do
+	sub_youtube $name $channel $last $subs
+done < "$HOME/Videos/subscriptions.txt"

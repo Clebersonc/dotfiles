@@ -4,7 +4,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 alias q='exit'
-alias c='clear'
+#alias c='clear'
 alias erase='command rm'
 alias rm='trash' # Use 'trash' to have more control for your deleted files.
 alias mv='mv --interactive --verbose'
@@ -12,7 +12,7 @@ alias cp='cp --interactive --verbose'
 alias ln='ln --interactive --verbose'
 alias mkdir='mkdir -p' # Make parentes.
 alias dirs='dirs -v -p' # Print directory stack to use with '..' function.
-alias ls='ls --almost-all --classify --color=always --group-directories-first --ignore=.pki --ignore=.thumbnails --ignore=.icons --ignore=.gtkrc-2.0 --ignore=.esd_auth --ignore=eclipse-workspace --ignore=.npm --ignore=.gnupg --ignore=.ssh --ignore=.tooling --ignore=.eclim --ignore=.gradle --ignore=.swt --ignore=.eclipse --ignore=.npmrc --ignore=workbench.xmi --ignore=.fasd --ignore=.fehbg --ignore=Xauthority --ignore=.gitmodules --ignore=.dircolors'
+alias ls='ls --almost-all --classify --color=always --group-directories-first --ignore=.pki --ignore=.thumbnails --ignore=.icons --ignore=.gtkrc-2.0 --ignore=.esd_auth --ignore=eclipse-workspace --ignore=.npm --ignore=.gnupg --ignore=.ssh --ignore=.tooling --ignore=.eclim --ignore=.gradle --ignore=.swt --ignore=.eclipse --ignore=.npmrc --ignore=workbench.xmi --ignore=.fasd --ignore=.fehbg --ignore=Xauthority --ignore=.gitmodules --ignore=.dircolors --ignore=.mono'
 alias lsd="command ls -A --classify | grep '/' | column"
 alias lsf='command ls -A --classify | grep --invert-match '/$' | column'
 alias cls='clear;ls' # clear and list files.
@@ -65,6 +65,17 @@ alias yalst='yaourt -Qe'
 alias yaorph='yaourt -Qtd'
 alias yainsd='yaourt -S --asdeps'
 alias yamir='yaourt -Syy'
+
+# Yay
+alias y='yay'
+alias yn='yay --noconfirm'
+alias yun='yay -Yc'
+alias yst='yay -Ps'
+alias ys='yay -S'
+alias ysn='yay -S --noconfirm'
+alias yr='yay -Rns'
+alias yrn='yay -Rns --noconfirm'
+alias yi='yay -Si'
 
 # Git
 alias g='git'

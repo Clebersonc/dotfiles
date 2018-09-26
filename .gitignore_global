@@ -46,6 +46,7 @@ Books
 Documents
 Downloads
 Games
+Comics
 Music
 Programming
 Videos/
@@ -60,6 +61,9 @@ Pictures
 .local/bin/eclimd
 .gradle
 .config/qutebrowser/autoconfig.yml
+.config/qutebrowser/qsettings/
+.config/qutebrowser/qsettings/QtProject.conf
+.config/qutebrowser/quickmarks
 .config/pcmanfm
 .config/neofetch
 .config/libfm
@@ -85,3 +89,17 @@ Pictures
 .local/share/qutebrowser/webengine/
 .local/share/vimiv/
 .local/share/xorg/
+.cht.sh/
+.config/dconf/
+.config/rclone/
+.config/systemd/
+.config/xbuild/
+.grip/
+.local/share/fonts/
+.local/share/nvim/
+.local/share/ranger/
+.local/share/zathura/
+.lyxauth
+.config/cmus/lib.pl
+.config/cmus/playlist.pl
+.config/ranger/plugins/__pycache__/

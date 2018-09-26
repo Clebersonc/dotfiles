@@ -1,9 +1,9 @@
 scriptencoding UTF-8
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"    [1]     [2]        [3]      [4]           [5]      [6]       [7]       "
-"   0 ⚠ 0  plugin/statusline.vim          1/8     master   02/26 / 32 "
-"  -------  ------ -------------- -            ---    --------  --------	"
+"    [1]     [2]        [3]      [4]                    [5]       [6]       "
+"   0 ⚠ 0  plugin/statusline.vim                   master   02/26 / 32 "
+"  -------  ------ -------------- -                   --------  --------	"
 "     |_      |__     |______     |___                   |__       |_      	"
 "       |        |           |__      |                     |        |     	"
 "       |       fileprefix()    |     |                   git()      |     	"
@@ -23,7 +23,7 @@ set statusline+=%<
 set statusline+=%{statusline#fileprefix()}
 
 " [3] File name for current buffer.
-set statusline+=%t
+"set statusline+=%t
 
 " [4] FileType Unicode symbol.
 set statusline+=%{repeat('\ ',1)}
@@ -31,10 +31,6 @@ set statusline+=%{statusline#filetypesymbol()} " Install devicons to get filetyp
 
 " Align all items to right from this point on.
 set statusline+=%=
-
-" [5] Show search match number and total in <Match>:<Total> format, if hlsearch are enabled.
-set statusline+=%{statusline#hlsearch()} " Show icon for hlsearch option.
-set statusline+=%{repeat('\ ',4)}
 
 " Markdown preview icon indicator.
 set statusline+=%{statusline#markdownpreview()}

@@ -13,7 +13,7 @@ execute printf('set viminfo+=n~/.vim/cache/share/%s', has('nvim') ? 'nviminfo' :
 " Colors
  set background=dark " Choose dark colors if available.
  colorscheme gruvbox " Color scheme.
-"set termguicolors " Enable True Color support.
+ set termguicolors " Enable True Color support.
 
 " Behaviour
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode.

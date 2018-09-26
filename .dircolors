@@ -35,7 +35,7 @@ DOOR                  38;5;127 # Solaris door
 *NOTICE               38;5;220;1
 *CHANGES              38;5;220;1
 .log                  38;5;190
-.txt                  38;5;253
+.txt                  39;5;253
 .etx                  38;5;184
 .info                 38;5;184
 .markdown             38;5;184

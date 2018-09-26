@@ -1,14 +1,28 @@
 
+;[colors]
+;;background = ${xrdb:color0:#222}
+;background = #222
+;background-alt = #444
+;;foreground = ${xrdb:color7:#222}
+;foreground = #dfdfdf
+;foreground-alt = #555
+;primary = #ffb52a
+;secondary = #e60053
+;alert = #bd2c40
+
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = ${xrdb:color12:#222}
+foreground = ${xrdb:color0:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+
+volume = ${xrdb:color9:#222}
+avrg = ${xrdb:color10:#222}
+hack = ${xrdb:color11:#222}
+date = ${xrdb:color7:#222}
+date2 = ${xrdb:color8:#222}
 
 [bar/top]
 monitor = VGA-0
@@ -69,8 +83,8 @@ type = internal/bspwm
 ws-icon-0 = term;
 ws-icon-1 = web;
 ws-icon-2 = files;
-ws-icon-3 = design;
-#ws-icon-4 = office;
+ws-icon-3 = video;
+ws-icon-4 = design;
 #ws-icon-5 = system;
 ws-icon-default = 
 
@@ -158,7 +172,7 @@ ramp-coreload-7-foreground = #ff5555
 type = internal/date
 date =  %%{F#99}%d-%m-%Y%%{F-}  %%{F#fff}%H:%M%%{F-}
 date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
-format-underline = #0a6cf5
+format-underline = ${colors.date}
 
 [module/memory]
 type = internal/memory
@@ -200,7 +214,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = 婢 muted
 label-muted-foreground = #666
 
-format-volume-underline = #999
+format-volume-underline = ${colors.volume}
 
 #bar-volume-width = 10
 #bar-volume-foreground-0 = #55aa55
@@ -276,13 +290,13 @@ type = custom/script
 exec = sh ~/.config/polybar/scripts/info-hackspeed.sh
 tail = true
 label =   %output%
-format-underline = #ff6600
+format-underline = ${colors.hack}
 
 [module/system-cpu-loadavg]
 type = custom/script
 exec = sh ~/.config/polybar/scripts/system-cpu-loadavg.sh
 interval = 5
-format-underline = ${colors.secondary}
+format-underline = ${colors.avrg}
 
 format = <label>
 label =   %output%

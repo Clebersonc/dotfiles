@@ -18,3 +18,24 @@ let java_ignore_javadoc=1
 let java_minlines = 150
 let lace_case_insensitive=1
 "setlocal omnifunc=javacomplete#Complete
+
+hi javaFuncDef guifg=#b8bb26
+hi javaParen guifg=#909090
+hi javaOperator guifg=#fabd2f
+hi javaType guifg=#8f3f71
+hi javaConstant guifg=#076678
+hi javaNumber guifg=#d3869b
+hi javaString guifg=#427b58
+hi javaAnnotation guifg=#b8bb26
+hi javaExternal guifg=#b8bb26
+hi javaBoolean guifg=#b8bb26
+hi javaScopeDecl guifg=#cc241d
+hi javaStorageClass guifg=#cc241d
+hi javaClassDecl guifg=#cc241d
+hi javaConditional guifg=#d65d0e
+hi javaRepeat guifg=#d65d0e
+hi javaTypedef guifg=#d65d0e
+hi javaStatement guifg=#d65d0e
+hi javaExceptions guifg=#d65d0e
+hi javaAssert guifg=#d65d0e
+

@@ -1,0 +1,64 @@
+#!/bin/bash
+printf "\e[38;5;81m"
+echo ""
+sleep 0.1
+echo ""
+sleep 0.1
+echo ""
+sleep 0.1
+echo "                                                                             -"
+sleep 0.1
+echo "                                                                            .o+"
+sleep 0.1
+echo "                                                                            ooo"
+sleep 0.1
+echo "                                                                           +oooo:"
+sleep 0.1
+echo "                                                                          +oooooo:"
+sleep 0.1
+echo "                                                                         -+oooooo+:"
+sleep 0.1
+echo "                                                                        /:-:++oooo+:"
+sleep 0.1
+echo "                                                                       /++++/+++++++:"
+sleep 0.1
+echo "                                                                      /++++++++++++++:"
+sleep 0.1
+echo "                                                                     /+++ooooooooooooo/"
+sleep 0.1
+echo "                                                                   ./ooosssso++osssssso+"
+sleep 0.1
+echo "                                                                  .oossssso-    /ossssss+"
+sleep 0.1
+echo "                                                                 -osssssso.      :ssssssso."
+sleep 0.1
+echo "                                                                :osssssss/        osssso+++."
+sleep 0.1
+echo "                                                               /ossssssss/        +ssssooo/-"
+sleep 0.1
+echo "                                                              /ossssso+/:-        -:/+osssso+-"
+sleep 0.1
+echo "                                                             +sso+:-                  .-/+oso:"
+sleep 0.1
+echo "                                                            ++:.                            -/+/"
+sleep 0.1
+echo "                                                           .                                   /"
+sleep 0.1
+printf "\e[0;0;81m"
+sleep 0.1
+echo "                                                        _____   _____ _    _   _      _____ _   _ _    ___   __"
+sleep 0.1
+echo "                                                  /\   |  __ \ / ____| |  | | | |    |_   _| \ | | |  | \ \ / /"
+sleep 0.1
+echo "                                                 /  \  | |__) | |    | |__| | | |      | | |  \| | |  | |\ V /"
+sleep 0.1
+echo "                                                / /\ \ |  _  /| |    |  __  | | |      | | | . | | |  | | > <"
+sleep 0.1
+echo "                                               / ____ \| | \ \| |____| |  | | | |____ _| |_| |\  | |__| |/ . \ "
+sleep 0.1
+echo "                                              /_/    \_\_|  \_\______|_|  |_| |______|_____|_| \_|\____//_/ \_\ "
+sleep 0.1
+echo ""
+sleep 0.1
+echo ""
+sleep 0.5

@@ -10,14 +10,14 @@
     padding = 10
     horizontal_padding = 10
     frame_width = 1
-    frame_color = "#232323"
+    frame_color = "#504945"
     separator_color = frame
     sort = yes
     idle_threshold = 120
     font = Source Sans Pro 10
     line_height = 0
     markup = full
-    format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
+    format = "<span foreground='#f2e5bc'><b>%s %p</b></span>\n%b"
     alignment = left
     show_age_threshold = 60
     word_wrap = yes
@@ -43,16 +43,16 @@
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
-    history = ctrl+grave
+    history = ctrl+F1
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#232323"
+    background = "#076678"
     foreground = "#a8a8a8"
     timeout = 10
 
 [urgency_normal]
-    background = "#232323"
+    background = "#076678"
     foreground = "#a8a8a8"
     timeout = 10
 

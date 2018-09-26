@@ -1,10 +1,19 @@
 #! /bin/sh
 
-#### WORKSPACES AND BORDERS ####
+#  ▄▄▄▄     ██████  ██▓███   █     █░ ███▄ ▄███▓ ██▀███   ▄████▄
+# ▓█████▄ ▒██    ▒ ▓██░  ██▒▓█░ █ ░█░▓██▒▀█▀ ██▒▓██ ▒ ██▒▒██▀ ▀█
+# ▒██▒ ▄██░ ▓██▄   ▓██░ ██▓▒▒█░ █ ░█ ▓██    ▓██░▓██ ░▄█ ▒▒▓█    ▄
+# ▒██░█▀    ▒   ██▒▒██▄█▓▒ ▒░█░ █ ░█ ▒██    ▒██ ▒██▀▀█▄  ▒▓▓▄ ▄██▒
+# ░▓█  ▀█▓▒██████▒▒▒██▒ ░  ░░░██▒██▓ ▒██▒   ░██▒░██▓ ▒██▒▒ ▓███▀ ░
+# ░▒▓███▀▒▒ ▒▓▒ ▒ ░▒▓▒░ ░  ░░ ▓░▒ ▒  ░ ▒░   ░  ░░ ▒▓ ░▒▓░░ ░▒ ▒  ░
+# ▒░▒   ░ ░ ░▒  ░ ░░▒ ░       ▒ ░ ░  ░  ░      ░  ░▒ ░ ▒░  ░  ▒
+#  ░    ░ ░  ░  ░  ░░         ░   ░  ░      ░     ░░   ░ ░
+#  ░            ░               ░           ░      ░     ░ ░
+#       ░                                                ░
 
-bspc monitor -d term web files design office system
+bspc monitor -d term web files video design system
 
-bspc config border_width         0
+bspc config border_width         2
 bspc config window_gap          25
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
@@ -15,34 +24,30 @@ bspc config bottom_padding       20
 bspc config left_padding         20
 bspc config right_padding        20
 
-bspc rule -a Alacritty desktop='^1' follow=on
-bspc rule -a qutebrowser desktop='^2' follow=on
-bspc rule -a Pcmanfm desktop='^3' follow=on
-bspc rule -a Typora desktop='^4' follow=on
-bspc rule -a Inkscape desktop='^4' follow=on
-bspc rule -a Gimp-2.10 desktop='^5' follow=on
-bspc rule -a Lxappearence desktop='^6' follow=on
+bspc rule -a Kitty			    desktop='^1' follow=on focus=on
+bspc rule -a qutebrowser		desktop='^2' follow=on
+bspc rule -a Pcmanfm			desktop='^3' follow=on
+bspc rule -a Typora				desktop='^4' follow=on
+bspc rule -a Inkscape			desktop='^5' follow=on
+bspc rule -a Gimp-2.10			desktop='^5' follow=on
+bspc rule -a Lxappearence		desktop='^6' follow=on
 
-bspc rule -a mpv   state=floating follow=on
-bspc rule -a Vimiv state=floating follow=on
+bspc rule -a Vimiv				state=floating follow=on
+bspc rule -a mpv				state=floating follow=on
 
 #Focus on pointer
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus true
 
-#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#volumeicon &
-#nm-applet &
-#(sleep 3 && pulseaudio) &
-#feh --bg-fill ~/Pictures/wallpaper/dark.jpg &
-~/.fehbg &
-setxkbmap -option caps:swapescape &
-sxhkd &
-compton &
-xset -b & #For annoying beeping sounds
-polybar top &
-(sleep 5 && polybar bottom) &
-(sleep 5 && xautolock -time 10 -locker "betterlockscreen -l") &
-(sleep 5 && dunst) &
-(sleep 5 && unclutter -idle 1 -jitter 2 -root) &
-(sleep 5 && eclimd -b) &
+
+# Set the border colors.
+bspc config normal_border_color "$color0"
+bspc config active_border_color "$color0"
+bspc config focused_border_color "$fg"
+bspc config presel_feedback_color "$color7"
+
+# source the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# execute some nice programs on startup.
+. "${HOME}/.config/bspwm/autostart"

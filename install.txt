@@ -72,3 +72,5 @@ xdg-user-dirs
 xorg-xinput
 youtube-dl
 mingetty
+xorg-xprop
+pavucontrol

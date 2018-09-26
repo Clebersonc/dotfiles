@@ -1,0 +1,11 @@
+sxhkd &
+wal -s -R
+~/.fehbg &
+~/.config/polybar/launch.sh
+setxkbmap -option caps:swapescape &
+compton &
+xset -b & #For annoying beeping sounds
+xautolock -time 10 -locker "betterlockscreen -l" &
+unclutter -idle 1 -jitter 2 -root &
+dunst &
+#(sleep 5 && eclimd -b) &

@@ -1249,13 +1249,6 @@ hi! link luaTable GruvboxOrange
 " MoonScript: {{{
 
 hi! link moonSpecialOp GruvboxFg3
-hi! link moonExtendedOp GruvboxFg3
-hi! link moonFunction GruvboxFg3
-hi! link moonObject GruvboxYellow
-
-" }}}
-" Java: {{{
-
 hi! link javaAnnotation GruvboxBlue
 hi! link javaDocTags GruvboxAqua
 hi! link javaCommentTitle vimCommentTitle
@@ -1268,30 +1261,37 @@ hi! link javaParen5 GruvboxFg3
 hi! link javaOperator GruvboxOrange
 
 hi! link javaVarArg GruvboxGreen
-hi! javaFuncDef guifg=#b8bb26
-hi! javaParen guifg=#909090
-hi! javaOperator guifg=#fabd2f
-hi! javaType guifg=#8f3f71
-hi! javaConstant guifg=#076678
-hi! javaNumber guifg=#d3869b
-hi! javaString guifg=#427b58
-hi! javaAnnotation guifg=#b8bb26
-hi! javaExternal guifg=#b8bb26
-hi! javaBoolean guifg=#b8bb26
-hi! javaScopeDecl guifg=#cc241d
-hi! javaStorageClass guifg=#cc241d
-hi! javaClassDecl guifg=#cc241d
-hi! javaConditional guifg=#d65d0e
-hi! javaRepeat guifg=#d65d0e
-hi! javaTypedef guifg=#d65d0e
-hi! javaStatement guifg=#d65d0e
-hi! javaExceptions guifg=#d65d0e
-hi! javaAssert guifg=#d65d0e
+"hi! javaFuncDef guifg=#b8bb26
+"hi! javaParen guifg=#909090
+"hi! javaOperator guifg=#fabd2f
+"hi! javaType guifg=#8f3f71
+"hi! javaConstant guifg=#076678
+"hi! javaNumber guifg=#d3869b
+"hi! javaString guifg=#427b58
+"hi! javaAnnotation guifg=#b8bb26
+"hi! javaExternal guifg=#b8bb26
+"hi! javaBoolean guifg=#b8bb26
+"hi! javaScopeDecl guifg=#cc241d
+"hi! javaStorageClass guifg=#cc241d
+"hi! javaClassDecl guifg=#cc241d
+"hi! javaConditional guifg=#d65d0e
+"hi! javaRepeat guifg=#d65d0e
+"hi! javaTypedef guifg=#d65d0e
+"hi! javaStatement guifg=#d65d0e
+"hi! javaExceptions guifg=#d65d0e
+"hi! javaAssert guifg=#d65d0e
 
 " }}}
 " Elixir: {{{
 
 hi! link elixirDocString Comment
+
+hi! link moonExtendedOp GruvboxFg3
+hi! link moonFunction GruvboxFg3
+hi! link moonObject GruvboxYellow
+
+" }}}
+" Java: {{{
 
 hi! link elixirStringDelimiter GruvboxGreen
 hi! link elixirInterpolationDelimiter GruvboxAqua

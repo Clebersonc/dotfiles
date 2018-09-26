@@ -11,11 +11,11 @@
 # Right : RIGHT, ^[[C
 # Left  : LEFT, ^[[D
 
-# Page/Cursor motion 
-#keymap j NEXT_PAGE
-#keymap k PREV_PAGE
-#keymap l MOVE_RIGHT
-#keymap h MOVE_LEFT
+# Page/Cursor motion
+keymap j NEXT_PAGE
+keymap k PREV_PAGE
+keymap l MOVE_RIGHT
+keymap h MOVE_LEFT
 keymap K DOWN
 keymap J UP
 keymap < SHIFT_LEFT
@@ -24,7 +24,7 @@ keymap \^,C-a LINE_BEGIN
 keymap $,C-e LINE_END
 keymap Z CENTER_H
 keymap z CENTER_V
-keymap g BEGIN
+keymap gg BEGIN
 keymap G END
 keymap w NEXT_WORD
 keymap b PREV_WORD
@@ -32,7 +32,7 @@ keymap TAB NEXT_LINK
 keymap ESC-TAB PREV_LINK
 keymap u UNDO
 keymap C-r REDO
-keymap L LIST_MENU
+#keymap L LIST_MENU
 
 # Hyperlink operation
 #keymap M MARK_WORD
@@ -55,8 +55,8 @@ keymap # PIPE_SHELL
 keymap |   PIPE_BUF
 
 # Buffer operation
-keymap B BACK
-keymap . NEXT
+keymap H BACK
+keymap L NEXT
 keymap , PREV
 keymap S SELECT_MENU
 keymap ESC-s SAVE
@@ -77,9 +77,9 @@ keymap d CLOSE_TAB
 keymap ESC-b VIEW_BOOKMARK
 keymap ESC-a ADD_BOOKMARK
 
-# Search 
+# Search
 keymap / ISEARCH
-keymap ? ISEARCH_BACK
+#keymap ? ISEARCH_BACK
 keymap n SEARCH_NEXT
 keymap N SEARCH_PREV
 
@@ -99,7 +99,7 @@ keymap ESC-a ADD_BOOKMARK
 
 # Misc operation
 keymap \\ MENU
-keymap H HELP
+keymap ? HELP
 keymap ESC-o OPTIONS
 keymap ESC-k COOKIE
 keymap ESC-h HISTORY

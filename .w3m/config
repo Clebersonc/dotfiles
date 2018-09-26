@@ -114,11 +114,11 @@ show_srch_str 1
 show_lnum 0
 fold_line 0
 image_map_list 1
-imgdisplay /usr/bin/w3mimgdisplay
+imgdisplay
 image_scale 100
 ext_image_viewer 1
 max_load_image 4
-auto_image 1
+auto_image 0
 display_image 1
 view_unseenobject 1
 ignore_null_img_alt 1

@@ -4,6 +4,19 @@
 # @param {string} $1 Audio file that will be played.
 ##
 
+pcat (){
+  if $2
+  then
+      pygmentize -g $1 | cat
+  else
+      pygmentize -g $2 | cat $1
+  fi
+}
+
+pless (){
+  pygmentize -g $1 | less
+}
+
 notes() {
 	ffplay -hide_banner -f lavfi \
 		"amovie='$1', asplit [a][out1]; [a] showcqt=size=1400x1052 [out0]";

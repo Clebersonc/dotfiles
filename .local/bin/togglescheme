@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+islight=$(ag background=light ~/.vim/plugin/settings.vim)
+
+if [[ $islight ]] {
+	~/.local/bin/rpl light dark ~/.vim/plugin/settings.vim &>/dev/null
+	~/.local/bin/rpl light dark ~/.config/kitty/kitty.conf &>/dev/null
+    wal -s --theme /home/ctroy/.colors/base16-gruvbox-hard.json &>/dev/null
+	/usr/bin/feh --bg-scale /home/ctroy/Pictures/dark.jpg &>/dev/null
+	pkill kitty &>/dev/null && kitty tmux attach &
+} else {
+	~/.local/bin/rpl dark light ~/.vim/plugin/settings.vim &>/dev/null
+	~/.local/bin/rpl dark light ~/.config/kitty/kitty.conf &>/dev/null
+    wal -s --theme /home/ctroy/.colors/base16-gruvbox-soft.json &>/dev/null
+	/usr/bin/feh --bg-scale /home/ctroy/Pictures/light.jpg &>/dev/null
+	pkill kitty &>/dev/null && kitty tmux attach &
+}

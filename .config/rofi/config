@@ -28,9 +28,9 @@ rofi.highlightfg:   $r_bg
 rofi.foreground:    $r_fg
 rofi.levenshtein-sort: true
 
-!rofi.color-enabled: true
+rofi.color-enabled: true
 ! Color scheme for normal row
-rofi.color-normal: argb:00000000,  #D8DEE9 , argb:00000000,  #201e1e	,  #D8DEE0
+rofi.color-normal: argb:00000000,  #ebdbb2 , argb:00000000,  #ebdbb2	,  #282828
 ! Color scheme for urgent row
 rofi.color-urgent: argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
 ! Color scheme for active row
@@ -39,3 +39,4 @@ rofi.color-active: argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
 rofi.color-window: argb:ce222222,  #000000 ,  #696969
 ! Separator style (none, dash, solid)
 rofi.separator-style: solid
+

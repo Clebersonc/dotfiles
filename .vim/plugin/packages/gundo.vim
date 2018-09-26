@@ -22,4 +22,4 @@ let g:gundo_preview_statusline = ' '
 let g:gundo_tree_statusline = ' '
 
 " Mapping to open Gundo.
-nnoremap <silent> <Leader>u :packadd gundo.vim<Enter> :call gundo#GundoToggle()<Enter>
+nnoremap <silent> <Leader>u :packadd gundo<Enter> :call gundo#GundoToggle()<Enter>
