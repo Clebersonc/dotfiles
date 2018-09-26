@@ -49,3 +49,6 @@
  [submodule ".zsh/plugins/zsh-autopair"]
  	path = .zsh/plugins/zsh-autopair
  	url = https://github.com/hlissner/zsh-autopair
+[submodule ".vim/pack/bundle/opt/textbeat"]
+	path = .vim/pack/bundle/opt/textbeat
+	url = https://github.com/flipcoder/vim-textbeat
