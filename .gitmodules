@@ -1,0 +1,42 @@
+[submodule ".zsh/plugins/zsh-syntax-highlighting"]
+ 	path = .zsh/plugins/zsh-syntax-highlighting
+ 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+ [submodule ".vim/pack/bundle/opt/colorizer"]
+ 	path = .vim/pack/bundle/opt/colorizer
+ 	url = https://github.com/lilydjwg/colorizer
+ [submodule ".vim/pack/bundle/opt/dasht"]
+ 	path = .vim/pack/bundle/opt/dasht
+ 	url = https://github.com/sunaku/vim-dasht
+ [submodule ".vim/pack/bundle/opt/gundo"]
+ 	path = .vim/pack/bundle/opt/gundo
+ 	url = https://github.com/sjl/gundo.vim
+ [submodule ".vim/pack/bundle/opt/nerdtree"]
+ 	path = .vim/pack/bundle/opt/nerdtree
+ 	url = https://github.com/scrooloose/nerdtree
+ [submodule ".vim/pack/bundle/opt/ultisnips"]
+ 	path = .vim/pack/bundle/opt/ultisnips
+ 	url = https://github.com/sirver/UltiSnips
+ [submodule ".vim/pack/bundle/start/ale"]
+ 	path = .vim/pack/bundle/start/ale
+ 	url = https://github.com/w0rp/ale
+ [submodule ".vim/pack/bundle/start/comfortable-motion"]
+ 	path = .vim/pack/bundle/start/comfortable-motion
+ 	url = https://github.com/yuttie/comfortable-motion.vim
+ [submodule ".vim/pack/bundle/start/editorconfig"]
+ 	path = .vim/pack/bundle/start/editorconfig
+ 	url = https://github.com/editorconfig/editorconfig-vim
+ [submodule ".vim/pack/bundle/start/fzf"]
+ 	path = .vim/pack/bundle/start/fzf
+ 	url = https://github.com/junegunn/fzf.vim
+ [submodule ".vim/pack/bundle/start/gina"]
+ 	path = .vim/pack/bundle/start/gina
+ 	url = https://github.com/lambdalisue/gina.vim
+ [submodule ".vim/pack/bundle/start/devicons"]
+ 	path = .vim/pack/bundle/start/devicons
+ 	url = https://github.com/ryanoasis/vim-devicons
+ [submodule ".vim/pack/bundle/start/signify"]
+ 	path = .vim/pack/bundle/start/signify
+ 	url = https://github.com/mhinz/vim-signify
+ [submodule ".vim/pack/bundle/start/startify"]
+ 	path = .vim/pack/bundle/start/startify
+ 	url = https://github.com/mhinz/vim-startify
