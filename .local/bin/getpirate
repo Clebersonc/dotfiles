@@ -1,0 +1,48 @@
+#!/bin/bash
+
+str=""
+
+for i in "$@"
+do
+	str="$str$i"%20
+done
+output=$(curl "https://www.thepiratebay.org/search/$str" 2>/dev/null)
+server_down="Database maintenance, please check back in 10 minutes. 12"
+
+if [[ $output == $server_down ]]; then
+	echo "Sorry! It looks like the server is down."
+	exit 0
+fi
+
+
+#if [[ $(echo $output | wc -l) -eq 1 ]]; then
+#	echo $output
+#	echo $output | wc -l
+#	exit 0
+#fi
+
+matches=$(echo -e "${output[*]}" | grep detName\"\> | sed -E 's/.*href="\/torrent\/[0-9]+\///g' | sed 's/" class=.*//g' | sed 's/_/ /g' | sed 's/^ *//;s/ *$//' | nl -nrz -w2)
+echo -e \\n"${matches[*]}"\\n
+
+read -p "Enter the torrent number: " number
+
+url=$(echo "${output[*]}" | grep detName\"\> | sed -n "$number"p | sed -E 's/.*href="//g' | sed 's/" class=.*//g')
+url=$(echo "$url" | sed 's/\[/\\[/g' | sed 's/\]/\\]/g')
+torrent=$(curl "https://www.thepiratebay.org$url" 2>/dev/null)
+
+description=$(echo "$torrent" | sed -n "/<pre>/,/<\/pre>/p" | sed 's/<[^>]*>//g' | sed 's/.*href.*//' | sed 's/.*http.*//' | sed '/^\s*$/d')
+info=$(echo "$torrent" | grep -A 32 Type: | sed 's/<[^>]*>//g' | sed 's/&nbsp;//' | sed 's/&gt;//g' | sed -E 's/&.*Bytes\)//g' | tr -d '\n' | sed -E 's/[[:space:]]+/ /g' | sed 's/By:/\nBy:       /' | sed 's/Seeders:/\nSeeders:  /' | sed 's/Leechers:/\nLeeches:  /' | sed 's/Comments/\nComments  /' | sed 's/Info/\nInfo/' | sed 's/ Uploaded:/\nUploaded: /' | sed 's/Files:/\nFiles:    /' | sed 's/Size:/\nSize      /' | sed 's/Tag(s):/\nTag(s):   /' | sed 's/ Type:/Type:     /')
+echo -e \\n"Torrent Description: "
+echo -e \\n"${description[*]}"\\n
+echo -e \\n"Torrent Info:   "\\n
+echo -e "Name       $(echo $url | sed -E 's/\/torrent\/[0-9]+\///g' | sed 's/_/ /g')"
+echo -e "${info[*]}"\\n
+hash=$(echo "${info[*]}" | grep Hash | sed 's/Info Hash: //g')
+
+read -p "Do you want download? [y/N] " answer
+
+if [[ ${answer,,} == 'y' ]]; then
+
+	read -p "What is the destination: " path
+	~/.local/bin/webtorrent download $hash -o "$HOME/$path"
+fi

@@ -11,7 +11,7 @@ set viminfo=!,'100,<50,s10,h
 execute printf('set viminfo+=n~/.vim/cache/share/%s', has('nvim') ? 'nviminfo' : 'viminfo')
 
 " Colors
- set background=dark " Choose dark colors if available.
+ set background=light " Choose light colors if available.
  colorscheme gruvbox " Color scheme.
  set termguicolors " Enable True Color support.
 
@@ -49,7 +49,7 @@ if has('nvim') | set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cu
 if has('nvim') | set inccommand=nosplit | endif " Show live substitution results as you type.
 
 " Interface
-set cursorline " Highdark the line background of the cursor.
+set cursorline " Highlight the line background of the cursor.
 set fillchars=vert:⏐ " Characters to fill the status lines and vertical separators.
 set laststatus=2 " Always show the status line.
 set linebreak " Wrap lines in 'breakat', rather than at the last character.
@@ -92,7 +92,7 @@ let &grepprg = 'ag' " Program to use for the :grep command.
 set grepformat=%f:%l:%c:%m,%f:%l:%m " Format to recognize for the :grep command output.
 set ignorecase " Make default search is not case sensitive.
 set incsearch " Instantly show results when you start searching.
-set nohlsearch " Disable highdark the matched search results by default.
+set nohlsearch " Disable highlight the matched search results by default.
 set smartcase " If a uppercase character is entered, the search will be case sensitive.
 
 " Backup

@@ -46,7 +46,7 @@ aur
 	grip
 
 nodejs
-	webtorrent
+	webtorrent-cli
 
 games
 	gnome-chess, engine fruit

@@ -1,3 +1,4 @@
+
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 source "$ZDOTDIR/plugins/zsh-autopair/autopair.zsh"
 
@@ -8,6 +9,10 @@ source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 	typeset -A ZSH_HIGHLIGHT_STYLES
+
+# zsh-history-substring-search: zsh port for fish shell history search.
+source "$ZDOTDIR/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
+    HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=white,fg=black,'
 
 	# main
 	ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'

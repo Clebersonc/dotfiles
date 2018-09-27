@@ -37,3 +37,9 @@ zle -N select-bracketed
 
 # Load extra features for completion.
 zmodload zsh/complist
+
+# Load history search like fish shell
+autoload -U history-substring-search-up
+autoload -U history-substring-search-down
+zle -N history-substring-search-up
+zle -N history-substring-search-down
