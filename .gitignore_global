@@ -105,3 +105,9 @@ Pictures
 .config/ranger/plugins/__pycache__/
 20Suggestions on supported Sites (for DuckDuckGo ).user.js
 .local/lib/
+.android/
+.config/GIMP/
+.config/inkscape/
+.config/mps-youtube/
+.httpie/
+.local/share

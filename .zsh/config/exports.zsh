@@ -68,6 +68,8 @@ export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search histor
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.
 
+export CHTSH_QUERY_OPTIONS="style=trac"
+
 # fzf
 export FZF_DEFAULT_COLORS='--color=hl:4,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \

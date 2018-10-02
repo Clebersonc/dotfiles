@@ -7,10 +7,12 @@ function sub_youtube () {
 	local video=$(echo "$url" | grep yt-lockup-title | sed -n 1p | sed 's/.*title="//g' | sed 's/"  aria.*//g')
 	local current=$(echo "$video" | sed 's/ /_/g')
 	local url_download=$(echo "$url" | grep yt-lockup-title | sed -n 1p | sed 's/.*href="//g' | sed 's/" rel=.*//g')
+	local is_livestream=$(curl "https://www.youtube.com$url_download" | grep LIVESTREAMING)
 
-	if [[ "$url_download" == '' ]]; then
+	if [ "$url_download" == '' ] || [ "$name" == '#' ] || [ -z "$name" ] || [ "$is_livestream" != '' ]; then
 		return 0
 	fi
+
 	if [[ "$last" != "$current" ]]; then
 		~/.local/bin/rpl $last $current ~/Videos/subscriptions.txt
 		if [[ $4 == "subs" ]]; then
@@ -21,8 +23,8 @@ function sub_youtube () {
 
 		DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -t 0 "New Video" "Watch <b>$video</b> from <i>$name</i>."
 	fi
-
 }
+
 while read -r name channel last subs
 do
 	sub_youtube $name $channel $last $subs

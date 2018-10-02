@@ -9,7 +9,6 @@ pacman
 	qutebrowser
 	steamcmd
 	typora
-	youtube-viewer
 	android-tools
 	midori
 	rclone
@@ -23,7 +22,6 @@ aur
 	cava
 	cht.sh
 	betterlockscreen
-	i3lock-fancy-git
 	pmount
 	polybar
 	rarcrack
@@ -44,6 +42,12 @@ aur
 	googler
 	buku
 	grip
+	toilet
+	python-vint
+	zsh-you-should-use
+	python-readability-lxml
+	neovim-symlinks
+	python-jedi
 
 nodejs
 	webtorrent-cli
@@ -59,3 +63,4 @@ python
 
 github
 	https://github.com/flipcoder/textbeat
+	https://github.com/ardagnir/athame

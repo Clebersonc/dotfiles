@@ -1,5 +1,6 @@
 # Core shotcuts
 alias _='sudo'
+alias updb='sudo updatedb'
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
@@ -13,10 +14,11 @@ alias ln='ln --interactive --verbose'
 alias mkdir='mkdir -p' # Make parentes.
 alias dirs='dirs -v -p' # Print directory stack to use with '..' function.
 alias ls='ls --almost-all --classify --color=always --group-directories-first --ignore=.pki --ignore=.thumbnails --ignore=.icons --ignore=.gtkrc-2.0 --ignore=.esd_auth --ignore=eclipse-workspace --ignore=.npm --ignore=.gnupg --ignore=.ssh --ignore=.tooling --ignore=.eclim --ignore=.gradle --ignore=.swt --ignore=.eclipse --ignore=.npmrc --ignore=workbench.xmi --ignore=.fasd --ignore=.fehbg --ignore=Xauthority --ignore=.gitmodules --ignore=.dircolors --ignore=.mono'
+alias ll='ls -l'
 alias lsd="command ls -A --classify | grep '/' | column"
 alias lsf='command ls -A --classify | grep --invert-match '/$' | column'
 alias cls='clear;ls' # clear and list files.
-alias f='thunar "$PWD"' # Open current directory.
+alias f='pcmanfm "$PWD"' # Open current directory.
 alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n'"
 alias ag='ag --smart-case --pager="less"'
 alias pbcopy="xclip -selection clipboard"
@@ -79,6 +81,7 @@ alias yi='yay -Si'
 
 # Git
 alias g='git'
+alias gcr='git clone $(pbpaste)'
 alias gs='git status -sb'
 alias gf='git fetch'
 alias gc='git commit'

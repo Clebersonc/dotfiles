@@ -1,5 +1,3 @@
-alacritty
-alacritty-terminfo
 alsa-firmware
 alsa-utils
 aria2
@@ -11,7 +9,6 @@ cmus
 compton
 cronie
 dunst
-elinks
 evince
 fasd
 feh
@@ -74,3 +71,5 @@ youtube-dl
 mingetty
 xorg-xprop
 pavucontrol
+flake8
+prettier

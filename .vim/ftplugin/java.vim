@@ -2,6 +2,9 @@
 "packadd eclim
 "packadd nvim-cm-eclim
 
+" Map to use eclim auto-complete with utisnips.
+inoremap <expr> <c-u> IsExpandable() ? "\<Plug>(ultisnips_expand)" : "\<C-x>\<C-u>"
+
 " Gradle project mappings for run single java file, single test or build project.
 nnoremap <buffer><silent> <LocalLeader>b :execute 'split <Bar> terminal gradle clean build --info'<CR>
 nnoremap <buffer><silent> <LocalLeader>t :execute 'split <Bar> terminal gradle test --info'<Enter>

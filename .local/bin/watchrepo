@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function get_version () {
+	local name=$1
+	local user=$2
+	local last=$3
+	local new=$(curl https://github.com/"$user"/"$name"/releases | grep "$user/$name/releases/download/" | sed -n 1p | sed 's/.*\/download\///g' | sed 's/\/.*rel=.*//g')
+	if [ $last != $new ]; then
+		DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -t 0 "New Release" "The <b>$name</b> has the new version <b>$new</b>."
+		~/.local/bin/rpl $last $new ~/Documents/development/github/watch-repo.txt
+	fi
+}
+
+
+while read -r name user last
+do
+
+	get_version $name $user $last
+
+done < "$HOME/Documents/development/github/watch-repo.txt"

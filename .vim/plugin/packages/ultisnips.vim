@@ -19,6 +19,3 @@ inoremap <expr> <c-k> pumvisible() ? "\<C-p>" : "\<c-k>"
 	execute 'packadd ultisnips'
 	return !empty(UltiSnips#SnippetsInCurrentScope())
 endfunction
-
- " Open completation options or expand snippet.
-imap <expr> <c-u> IsExpandable() ? "\<Plug>(ultisnips_expand)" : "\<C-x>\<C-u>"

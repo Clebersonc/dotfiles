@@ -1,4 +1,6 @@
 
+source "$ZDOTDIR/plugins/zsh-you-should-use/you-should-use.plugin.zsh"
+
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 source "$ZDOTDIR/plugins/zsh-autopair/autopair.zsh"
 
