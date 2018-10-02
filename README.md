@@ -1,6 +1,10 @@
 # Dotfiles
 
+### Light Theme
+
 ![](https://imgur.com/WpHxIam.png)
+
+### Dark Theme
 
 ![](https://imgur.com/oqRCKBQ.png)
 
