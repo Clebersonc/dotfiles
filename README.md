@@ -1,8 +1,8 @@
 # Dotfiles
 
-![](https://imgur.com/a/Os0FG0v.png)
+![](https://imgur.com/WpHxIam.png)
 
-![](https://imgur.com/a/cwHtRts.png)
+![](https://imgur.com/oqRCKBQ.png)
 
 ### Desktop
 
