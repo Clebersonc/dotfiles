@@ -73,3 +73,5 @@ xorg-xprop
 pavucontrol
 flake8
 prettier
+python-tldextract
+pass

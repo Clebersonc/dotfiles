@@ -2,11 +2,11 @@
 
 ### Light Theme
 
-![](https://imgur.com/WpHxIam.png)
+![](https://i.imgur.com/FXsM9tYg.png)
 
 ### Dark Theme
 
-![](https://imgur.com/oqRCKBQ.png)
+![](https://i.imgur.com/vJclgNog.png)
 
 ### Desktop
 

@@ -111,3 +111,5 @@ Pictures
 .config/mps-youtube/
 .httpie/
 .local/share
+.gnupg
+.password-store

@@ -27,7 +27,7 @@ c.content.windowed_fullscreen = False
 # `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 # Same as `{column}`, but starting from index 0.
 # Type: ShellCommand
-c.editor.command = ['gvim', '-geometry', '500x3', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+#c.editor.command = ['gvim', '-geometry', '500x3', '-f', '{file}', '-c', 'normal {line}G{column0}l']
 
 # Font family for cursive fonts.
 # Type: FontFamily
@@ -64,19 +64,19 @@ c.fonts.hints = '11pt DejaVuSans Nerd Font'
 #c.colors.webpage.bg = '#282828'
 c.colors.webpage.bg = '#f2e5bc'
 c.content.user_stylesheets = '~/.config/qutebrowser/themes/gruvbox-all-sites.css'
+c.content.headers.user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+
 
 # Bindings for normal mode
+config.bind(',l', 'spawn --userscript qute-pass')
+config.bind(',ul', 'spawn --userscript qute-pass --username-only')
+config.bind(',pl', 'spawn --userscript qute-pass --password-only')
 config.bind(',d', 'spawn --userscript dict')
 config.bind(',e', 'spawn --userscript exec')
 config.bind(',r', 'spawn --userscript readability')
 config.bind(',v', 'hint links userscript mpv_video')
 config.bind(',a', 'hint links userscript mpv_audio')
-config.bind('<F2>', 'set-cmd-text -s :open -t')
-config.bind('<Shift-F2>', 'set-cmd-text -s :open')
-config.bind('<F9>', 'scroll-page 0 1')
-config.bind('<F10>', 'scroll-page 0 -1')
-config.bind('<Shift-F9>', 'scroll down')
-config.bind('<Shift-F10>', 'scroll up')
+
 config.bind('j', 'scroll-page 0 1')
 config.bind('k', 'scroll-page 0 -1')
 config.bind('J', 'scroll down')

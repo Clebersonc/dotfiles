@@ -24,7 +24,7 @@ bspc config bottom_padding       20
 bspc config left_padding         20
 bspc config right_padding        20
 
-bspc rule -a Kitty			    desktop='^1' follow=on focus=on
+bspc rule -a kitty			    desktop='^1' follow=on focus=on
 bspc rule -a qutebrowser		desktop='^2' follow=on
 bspc rule -a Pcmanfm			desktop='^3' follow=on
 bspc rule -a Typora				desktop='^4' follow=on
@@ -34,6 +34,7 @@ bspc rule -a Lxappearence		desktop='^6' follow=on
 
 bspc rule -a Vimiv				state=floating follow=on
 bspc rule -a mpv				state=floating follow=on
+bspc rule -a URxvt				state=floating follow=on
 
 #Focus on pointer
 bspc config focus_follows_pointer true
