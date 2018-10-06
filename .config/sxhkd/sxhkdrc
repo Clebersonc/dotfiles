@@ -132,20 +132,20 @@ Print
 
 ### Mute
 XF86AudioMute
-    amixer set Master toggle
+    amixer -q sset Master toggle
 
 ### Master Volume
 XF86AudioRaiseVolume
-    amixer set Master 2.5%+,5%+;
+    DISPLAY=0: amixer -q sset Master 2.5%+ unmute;
 
 super + XF86AudioRaiseVolume
-    amixer set Master 0.5%+,1%+;
+    amixer -q sset Master 0.5%+ unmute;
 
 XF86AudioLowerVolume
-    amixer set Master 2.5%-,5%-;
+    amixer -q sset Master 2.5%- unmute;
 
 super + XF86AudioLowerVolume
-    amixer set Master 0.5%-,1%-;
+    amixer -q sset Master 0.5%- unmute;
 
 # BRIGHTNESS
 

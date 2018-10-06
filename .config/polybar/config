@@ -48,6 +48,15 @@ modules-left = bspwm
 modules-center = xwindow
 modules-right = pulseaudio system-cpu-loadavg info-hackspeed wired-network date
 
+tray-position = right
+tray-padding = 5
+tray-detached = false
+tray-maxsize = 12
+;tray-background = ${colors.background-alt}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-scale = 1.0
+
 [bar/bottom]
 monitor = VGA-0
 bottom = true

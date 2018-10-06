@@ -16,12 +16,13 @@ pacman
 	mednafen
 	timidity++
 	timidity-freepats
+	lfpt
+	nethogs
 
 aur
 	nerd-fonts-dejavu-complete
 	cava
 	cht.sh
-	betterlockscreen
 	pmount
 	polybar
 	rarcrack
@@ -48,6 +49,7 @@ aur
 	python-readability-lxml
 	neovim-symlinks
 	python-jedi
+	slock-gruvbox
 
 nodejs
 	webtorrent-cli

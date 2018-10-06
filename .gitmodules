@@ -61,3 +61,6 @@
 [submodule ".vim/pack/bundle/opt/jedi"]
 	path = .vim/pack/bundle/opt/jedi
 	url = https://github.com/davidhalter/jedi-vim
+[submodule ".zsh/plugins/zsh-system-clipboard"]
+	path = .zsh/plugins/zsh-system-clipboard
+	url = https://github.com/kutsan/zsh-system-clipboard

@@ -5,7 +5,7 @@ wal -s -R
 setxkbmap -option caps:swapescape &
 compton &
 xset -b & #For annoying beeping sounds
-xautolock -time 10 -locker "betterlockscreen -l" &
+xautolock -time 10 -locker "slock" &
 unclutter -idle 1 -jitter 2 -root &
 dunst &
 #(sleep 5 && eclimd -b) &

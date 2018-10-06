@@ -1,11 +1,17 @@
 # Core shotcuts
+alias ip='ip -color' # Use `ip` utility always with colors.
 alias _='sudo'
 alias updb='sudo updatedb'
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 alias q='exit'
-#alias c='clear'
+alias a='awman'
+alias restart='sudo reboot'
+alias fontl='fc-cache -fv'
+alias l='locate'
+alias d='http --download'
+alias c='clear'
 alias erase='command rm'
 alias rm='trash' # Use 'trash' to have more control for your deleted files.
 alias mv='mv --interactive --verbose'
@@ -14,16 +20,20 @@ alias ln='ln --interactive --verbose'
 alias mkdir='mkdir -p' # Make parentes.
 alias dirs='dirs -v -p' # Print directory stack to use with '..' function.
 alias ls='ls --almost-all --classify --color=always --group-directories-first --ignore=.pki --ignore=.thumbnails --ignore=.icons --ignore=.gtkrc-2.0 --ignore=.esd_auth --ignore=eclipse-workspace --ignore=.npm --ignore=.gnupg --ignore=.ssh --ignore=.tooling --ignore=.eclim --ignore=.gradle --ignore=.swt --ignore=.eclipse --ignore=.npmrc --ignore=workbench.xmi --ignore=.fasd --ignore=.fehbg --ignore=Xauthority --ignore=.gitmodules --ignore=.dircolors --ignore=.mono'
-alias ll='ls -l'
+alias ll=' ls -l --almost-all --si'
 alias lsd="command ls -A --classify | grep '/' | column"
 alias lsf='command ls -A --classify | grep --invert-match '/$' | column'
 alias cls='clear;ls' # clear and list files.
 alias f='pcmanfm "$PWD"' # Open current directory.
 alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n'"
-alias ag='ag --smart-case --pager="less"'
+alias ag='ag --smart-case --pager="less" --color-path "34" --color-line-number "35" --color-match "1;32"'
+
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
 alias top="top -Hi"
+alias du="du --max-depth=1 --si | sort -h"
+alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
+alias dfc='dfc -dmT'
 
 # Global Aliases
 alias -g P='| pygmentize -f terminal256 -P style=monokai -l'
@@ -96,14 +106,12 @@ alias gl='git log \
 	--graph \
 	--abbrev-commit \
 	--decorate \
-	--format=format:"%C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset)%C(bold yellow)%d%C(reset) %C(black)%ar%C(reset)" \
+	--format=format:"%C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset)%C(bold yellow)%d%C(reset) %C(purple)%ar%C(reset)" \
 	--all'
 alias glt='git log \
 	--graph \
 	--abbrev-commit \
 	--decorate \
-	--format=format:"%C(bold black)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset)%C(bold yellow)%d%C(reset) %C(black)%ar%C(reset)" \
+	--format=format:"%C(bold white)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset)%C(bold yellow)%d%C(reset) %C(white)%ar%C(reset)" \
 	--date=format:"%Y-%m-%d %H:%M" \
 	--all'
-function ga() { git add "$@" && git status -sb }
-

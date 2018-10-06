@@ -113,3 +113,7 @@ Pictures
 .local/share
 .gnupg
 .password-store
+.config/pbpst/
+.gcalcli_cache
+.gcalcli_oauth
+.sdcv_history

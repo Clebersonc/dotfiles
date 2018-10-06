@@ -1,0 +1,33 @@
+#!/bin/bash
+
+str=""
+
+for i in "$@"
+do
+	str="$str$i"%20
+done
+
+output=$(curl "https://btso.pw/search/$str" 2>/dev/null)
+
+matches=$(echo -e "${output[*]}" | grep "<a href=\".*title=" | sed 's/.*title=\"//' | sed 's/\">//' | nl -nrz -w2)
+
+echo -e \\n"${matches[*]}"\\n
+
+read -p "Enter the torrent number: " number
+
+hash=$(echo "${output[*]}" | grep "<a href=\".*title=" | sed -n "$number"p | sed 's/.*hash\///' | sed 's/\" title=.*//g' | sed "s/^[ \t]*//")
+
+echo $hash
+
+selected=$(echo -e "${matches[*]}" | sed -n "$number"p | sed 's/^[0-9]\{2\}//' | sed "s/^[ \t]*//")
+echo -e \\n"You selected: $selected"\\n
+
+read -p "Do you want download? [y/N] " answer
+
+
+if [[ ${answer,,} == 'y' ]]; then
+
+	read -p "What is the destination: " path
+    echo -e \\n"Download starting..."
+	~/.local/bin/webtorrent download $hash -o "$HOME/$path"
+fi
