@@ -1,0 +1,61 @@
+#!/bin/python
+
+import re
+import click
+import requests
+import subprocess as sp
+from bs4 import BeautifulSoup as bs
+
+
+def geturl(search, playlist):
+    search = ' '.join(search)
+    search = re.sub(' ', '+', search)
+    plink = '' if playlist is False else '&sp=EgIQAw%253D%253D'
+    url = 'https://www.youtube.com/results?q=' + search + plink
+
+    html = requests.get(url)
+    htmlp = bs(html.content, 'html.parser')
+    tags = htmlp.findAll('div', class_='yt-lockup-content')
+
+    videos = list()
+    for t in tags:
+        videos.append((t.find('a').attrs['title'], t.find('a').attrs['href']))
+
+    i = 1
+    color = 'blue'
+    print()
+    for v in videos:
+        n = str(i) if i > 9 else "0" + str(i)
+        color = 'blue' if color == 'green' else 'green'
+        click.secho(n + "\t" + v[0], fg=color)
+        i += 1
+
+    video = int(input('\nselect by number: '))
+
+    vlink = videos[video-1][1].split('=')[-1]
+    urltype = '/watch?v=' if playlist is False else '/playlist?list='
+    vurl = 'https://www.youtube.com' + urltype + vlink
+    return vurl
+
+
+@click.command()
+@click.argument('search', nargs=-1)
+@click.option('-a', '--only-audio', 'audio', is_flag=True,
+              help="Play only audio.")
+@click.option('-p', '--playlist', is_flag=True,
+              help="Search for playlists.")
+@click.option('-s', '--shuffle', is_flag=True,
+              help="shuffle playlist.")
+def search(search, audio, playlist, shuffle):
+    """ Simple cli for search videos. """
+
+    url = geturl(search, playlist)
+    quality = '140' if audio or playlist is True else '18'
+    shuf = '' if shuffle is False else '--shuffle'
+
+    sp.Popen(['mpv', '--ytdl-format', quality, '--no-terminal', url,
+              '--input-ipc-server', '/tmp/mpvsocket', shuf])
+
+
+if __name__ == '__main__':
+    search()

@@ -1,0 +1,25 @@
+#!/bin/python
+
+import subprocess as sp
+import click
+import os
+import re
+from sh import fzf, ls
+
+editor = os.environ.get('EDITOR', 'vim')
+home = os.environ.get('HOME')
+
+
+@click.command()
+@click.argument('f', default='')
+def man(f):
+    if f == '':
+        f = sp.run('fzf', cwd='/home/ctroy/Documents/man', stdout=sp.PIPE)
+        f = re.sub('\n', '', f.stdout.decode())
+
+    f = home + '/Documents/man/' + f
+    sp.call([editor, f])
+
+
+if __name__ == '__main__':
+    man()

@@ -1,6 +1,7 @@
 alsa-firmware
 alsa-utils
 aria2
+aspell-en
 atool
 bdf-unifont
 bspwm
@@ -82,3 +83,7 @@ pbpst
 jq
 httpie
 dfc
+calibre
+gimp
+gradle
+weechat

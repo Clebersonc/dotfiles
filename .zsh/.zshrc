@@ -1,6 +1,6 @@
 foreach piece (
-	load.zsh
 	exports.zsh
+	load.zsh
 	hooks.zsh
 	prompt.zsh
 	settings.zsh

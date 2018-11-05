@@ -1,9 +1,3 @@
-##
-# Show notes from audio files.
-#
-# @param {string} $1 Audio file that will be played.
-##
-
 pcat (){
   if $2
   then
@@ -17,13 +11,18 @@ pless (){
   pygmentize -g $1 | less
 }
 
+##
+# Show notes from audio files.
+#
+# @param {string} $1 Audio file that will be played.
+##
 notes() {
 	ffplay -hide_banner -f lavfi \
 		"amovie='$1', asplit [a][out1]; [a] showcqt=size=1400x1052 [out0]";
 }
 
 ##
-# Dictionary formatted for best read.
+# Formatted pattern for stardict-wordnet dictionary.
 #
 # @param {string} $1 Word to get definition.
 ##
@@ -146,8 +145,7 @@ function ..() {
 ##
 # Bookmark manager.
 #
-# @param {string} [$1] Defined bookmark string.
-##
+# @param {string} [$1] Defined bookmark string. #
 function b() {
 	# Bookmarks
 	local -A bookmarks=(

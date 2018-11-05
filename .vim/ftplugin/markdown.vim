@@ -8,6 +8,11 @@ setlocal wrap
 setlocal nonumber
 setlocal norelativenumber
 
-" Toggle local preview server.
-nnoremap <buffer><silent> <LocalLeader>r :call ftplugin#markdown#preview()<Enter>
-nnoremap <buffer><silent> <LocalLeader>b :call system('xdg-open ' . expand('%:p') . '.html')<Enter>
+" Preview markdown with `grip`.
+nnoremap <buffer><silent> <LocalLeader>r :call system('grip --export ' . expand('%:p') . ' && qutebrowser ' . expand('%:p:r') . '.html')<Enter>
+
+" Delete .html file created by `grip` when leave buffer.
+augroup AutoDeleteHtml
+	autocmd!
+	autocmd BufWinLeave,BufLeave,BufWritePost ?* nested call delete(expand('%:p:r') . '.html')<Enter>
+augroup END

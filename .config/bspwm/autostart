@@ -1,11 +1,36 @@
+# Load keyboard key binds for bspwm.
 sxhkd &
+
+# Reload previews pywal theme, exclude terminal.
 wal -s -R
+
+# Reload previews desktop wallpaper.
 ~/.fehbg &
+
+# Launch top and bottom polybar statusbars.
 ~/.config/polybar/launch.sh
-setxkbmap -option caps:swapescape &
+
+# Activate cursor mouse on keyboard and swap caps and esc.
+setxkbmap -option caps:swapescape -option keypad:pointerkeys
+
+# Set mouse keys speed.
+xkbset ma 60 10 10 20 10
+
+# For transparence and other effects.
 compton &
+
 xset -b & #For annoying beeping sounds
+
+# Activate lock screen in 10min.
 xautolock -time 10 -locker "slock" &
+
+# Hide mouse.
 unclutter -idle 1 -jitter 2 -root &
+
+# Desktop notifications.
 dunst &
-#(sleep 5 && eclimd -b) &
+
+# Usbstick automount.
+udiskie &
+
+# vim:ft=sh

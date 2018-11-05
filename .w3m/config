@@ -114,7 +114,7 @@ show_srch_str 1
 show_lnum 0
 fold_line 0
 image_map_list 1
-imgdisplay
+imgdisplay w3migmdispay
 image_scale 100
 ext_image_viewer 1
 max_load_image 4

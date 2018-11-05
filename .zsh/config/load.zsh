@@ -2,7 +2,8 @@
 typeset -g -U path fpath cdpath
 
 # Load custom load path.
-fpath=($fpath "$ZDOTDIR/autoload")
+fpath+=($fpath "$ZDOTDIR/autoload")
+fpath+=($fpath "$ZDOTDIR/completions")
 
 # Load zrecompile for zcompile.
 autoload -U zrecompile

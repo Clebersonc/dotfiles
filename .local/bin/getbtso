@@ -22,10 +22,10 @@ echo $hash
 selected=$(echo -e "${matches[*]}" | sed -n "$number"p | sed 's/^[0-9]\{2\}//' | sed "s/^[ \t]*//")
 echo -e \\n"You selected: $selected"\\n
 
-read -p "Do you want download? [y/N] " answer
+read -p "Do you want download? [Y/n] " answer
 
 
-if [[ ${answer,,} == 'y' ]]; then
+if [[ ${answer,,} != 'n' ]]; then
 
 	read -p "What is the destination: " path
     echo -e \\n"Download starting..."

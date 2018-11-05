@@ -15,17 +15,19 @@
 #   0       *        *        *         *        newsboat -x reload
 #   */30    *        *        *         *        flexget --cron execute
 #   @reboot                                      transmission-daemon
-#=====================================================================#
 
-0  17 *  *  *  DISPLAY=:0 ~/.local/bin/togglescheme
-0  6  *  *  *  DISPLAY=:0 ~/.local/bin/togglescheme
-0  0  *  *  *  rclone drive:documents /home/ctroy/Documents
-0  16 *  *  *  sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send  -i trophy-gold "Time to Work Out" "It will be great make some exercises!"
-30 16 *  *  *  sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i trophy-gold "Time to Work Out" "Go! Do it! You can!"
-55 16 *  *  *  sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send  -i trophy-gold "Time to Work Out" "Make some exercices it's soo good!"
-0  22 *  *  *  sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i weather-few-clouds-night "Go to Bed" "1 hour to take a good sleep!"
-30 22 *  *  *  sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i weather-few-clouds-night "Go to Bed" "30 minutes, sleep it's soo good!"
-45 22 *  *  *  sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i weather-few-clouds-night "Go to Bed" "15 minutes left, it's will be great sleep!"
-55 22 *  *  *  sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i weather-few-clouds-night "Go to Bed" "Have a good night! I love you!"
-@hourly /home/ctroy/.local/bin/getcomic
-@hourly /home/ctroy/.local/bin/substube
+    0       17       *        *        *         DISPLAY=:0 ~/.local/bin/togglescheme
+    0       6        *        *        *         DISPLAY=:0 ~/.local/bin/togglescheme
+    0       9        *        *        *         rclone drive:documents /home/ctroy/Documents
+    0       16       *        *        *         sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send  -i trophy-gold "Time to Work Out" "It will be great make some exercises!"
+    30      16       *        *        *         sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i trophy-gold "Time to Work Out" "Go! Do it! You can!"
+    55      16       *        *        *         sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send  -i trophy-gold "Time to Work Out" "Make some exercices it's soo good!"
+    0       22       *        *        *         sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i weather-few-clouds-night "Go to Bed" "1 hour to take a good sleep!"
+    30      22       *        *        *         sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i weather-few-clouds-night "Go to Bed" "30 minutes, sleep it's soo good!"
+    45      22       *        *        *         sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i weather-few-clouds-night "Go to Bed" "15 minutes left, it's will be great sleep!"
+    55      22       *        *        *         sudo -u ctroy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send -i weather-few-clouds-night "Go to Bed" "Have a good night! I love you!"
+    @hourly                                      /home/ctroy/.local/bin/getcomic
+    @hourly                                      /home/ctroy/.local/bin/substube
+    @hourly                                      /home/ctroy/.local/bin/watchrepo
+    @reboot                                      rm -r ~/.cache/qutebrowser
+#=====================================================================#

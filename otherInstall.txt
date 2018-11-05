@@ -23,7 +23,6 @@ aur
 	nerd-fonts-dejavu-complete
 	cava
 	cht.sh
-	pmount
 	polybar
 	rarcrack
 	rpl
@@ -38,7 +37,7 @@ aur
 	libspotify
 	mesen
 	htop-vim
-	arch-wiki-cli
+	arch-wiki-man
 	nethack4
 	googler
 	buku
@@ -50,15 +49,22 @@ aur
 	neovim-symlinks
 	python-jedi
 	slock-gruvbox
-
-nodejs
+	wcalc
+	nodejs
 	webtorrent-cli
+	stardict-wordnet
+	fff-git
+	par
+	fetchmirrors
+	python-notify2
+	mpvc-git
 
 games
 	gnome-chess, engine fruit
 	nethack4
 	godot
 	radium
+	https://itch.io/app # For itch.io games
 
 python
 	vint

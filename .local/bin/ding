@@ -1,28 +1,23 @@
 #!/usr/bin/env zsh
-DEFAULT="$HOME/.config/sounds/${2:-ding}.ogg"
+DEFAULT="$HOME/.config/sounds/${2:-victory}.wav"
 
-case $OSTYPE in
-  darwin*) afplay $DEFAULT ;;
-  linux*)  paplay $DEFAULT ;;
-esac &
+if [  -f "/tmp/pomo.cnt" ] ; then
+	pomo=`cat /tmp/pomo.cnt`
+else
+	pomo=0
+fi
 
-sleep 1
+if [[ "${pomo}" == 3 ]]; then
+	DEFAULT="$HOME/.config/sounds/${2:-archivement}.wav"
+	pomo=0
+else
+	pomo=`expr ${pomo} + 1`
+fi
 
-end=$((SECONDS+${1:-}))
+#echo "pomo: ${pomo}"
 
-files=()
-while IFS=  read -r -d $'\0'; do
-	files+=("$REPLY")
-done < <(find $HOME/Music -iname '*.mp3' -print0)
+echo "${pomo}" > /tmp/pomo.cnt
 
-while [ $SECONDS -lt $end ]; do
+aplay $DEFAULT &>/dev/null &
 
-	if ! ps ax | grep -v grep | grep 'mpv' > /dev/null
-	then
-	    mpv --no-video ${files[$RANDOM % ${#files[@]} ]} > /dev/null 2>&1 &
-	fi
-
-done
-
-kill $!
-wait $! 2>/dev/null
+slock

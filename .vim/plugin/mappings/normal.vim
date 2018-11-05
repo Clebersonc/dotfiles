@@ -4,6 +4,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+"nnoremap <C-J> :bnext<CR>
+"nnoremap <C-K> :bprev<CR>
 
 tnoremap <silent> <C-z> <C-\><C-n>:call mappings#normal#terminal#()<Enter>
 nnoremap <silent> <C-z> :call mappings#normal#terminal#()<Enter>

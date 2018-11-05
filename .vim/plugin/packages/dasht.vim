@@ -5,7 +5,7 @@
 " Load optional plugin for appropriate file types.
 augroup loaddasht
 	autocmd!
-	autocmd FileType java packadd dasht
+	autocmd FileType java packadd vim-dasht
 augroup end
 
 

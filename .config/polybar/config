@@ -46,7 +46,7 @@ font-1 = MaterialIcons:size=10;-3
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = pulseaudio system-cpu-loadavg info-hackspeed wired-network date
+modules-right = pulseaudio system-cpu-loadavg info-hackspeed date
 
 tray-position = right
 tray-padding = 5
@@ -92,9 +92,7 @@ type = internal/bspwm
 ws-icon-0 = term;
 ws-icon-1 = web;
 ws-icon-2 = files;
-ws-icon-3 = video;
-ws-icon-4 = design;
-#ws-icon-5 = system;
+ws-icon-3 = video;
 ws-icon-default = 
 
 format = <label-state> <label-mode>

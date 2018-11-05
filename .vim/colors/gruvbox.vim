@@ -84,7 +84,7 @@ let s:is_dark=(&background == 'dark')
 " Palette: {{{
 
 " setup palette dictionary
-let s:gb = {}
+  let s:gb = {}
 
 " fill it with absolute colors
 let s:gb.dark0_hard  = ['#1d2021', 234]     " 29-32-33
@@ -831,7 +831,7 @@ let g:vimshell_escape_colors = [
 call s:HL('BufTabLineCurrent', s:bg0, s:fg4)
 call s:HL('BufTabLineActive', s:fg4, s:bg2)
 call s:HL('BufTabLineHidden', s:bg4, s:bg1)
-call s:HL('BufTabLineFill', s:bg0, s:bg0)
+call s:HL('BufTabLineFill', s:bg0, s:bg1)
 
 " }}}
 " Asynchronous Lint Engine: {{{
@@ -1258,6 +1258,7 @@ hi! link javaParen2 GruvboxFg3
 hi! link javaParen3 GruvboxFg3
 hi! link javaParen4 GruvboxFg3
 hi! link javaParen5 GruvboxFg3
+hi! link javaError GruvboxFg3
 hi! link javaOperator GruvboxOrange
 
 hi! link javaVarArg GruvboxGreen

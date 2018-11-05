@@ -1,4 +1,5 @@
-packadd jedi
+packadd jedi-vim
+packadd semshi
 
 " Map to use jedi autocomplete with ultisnips.
-imap <expr> <c-u> IsExpandable() ? "\<Plug>(ultisnips_expand)" : "\<C-x>\<C-o>"
+imap <expr> <c-u> IsExpandable() ? "\<C-R>=UltiSnips#ExpandSnippet()\<Enter>" : "\<C-x>\<C-o>"

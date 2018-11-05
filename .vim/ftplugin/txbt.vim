@@ -1,4 +1,4 @@
-packadd textbeat
+packadd vim-textbeat
 
 nnoremap <silent><buffer> <C-Space> :TextbeatPlay<cr>
 "nnoremap <silent><buffer> <space><space> :TextbeatStop<cr>

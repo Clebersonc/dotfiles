@@ -14,13 +14,9 @@ function! statusline#linter() abort
 endfunction
 
 function! statusline#fileprefix() abort
-	let l:basename = expand('%:h')
+	let l:basename = expand('%')
 
-	if l:basename ==# '' || l:basename ==# '.'
-		return ''
-	else
-		return substitute(l:basename . '/', '\C^' . $HOME, '~', '')
-	endif
+    return l:basename
 endfunction
 
 function! statusline#filetypesymbol() abort

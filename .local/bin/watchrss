@@ -1,0 +1,33 @@
+#!/bin/python
+
+import feedparser as fp
+import notify2 as n2
+import os
+import re
+
+n2.init('rss')
+home = os.environ['HOME']
+
+with open(home + "/Documents/sources/rss.txt") as rss:
+
+    file = rss.read()
+    for line in file.splitlines():
+
+        words = line.split()
+        feed = fp.parse(words[0])
+
+        newtitle = feed['entries'][0]['title']
+        oldtitle = re.sub('_', ' ', words[1])
+
+        if not newtitle == oldtitle:
+            title = feed['feed']['title']
+            notify = n2.Notification(title, newtitle)
+            notify.set_timeout(n2.EXPIRES_NEVER)
+            notify.show()
+
+            newtitle = re.sub(' ', '_', newtitle)
+            file = file.replace(oldtitle, newtitle)
+
+
+with open(home + "/Documents/sources/rss.txt", 'w') as rss:
+    rss.write(file)

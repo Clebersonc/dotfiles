@@ -9,3 +9,7 @@ nnoremap <silent> <Leader>c :call mappings#leader#setdir#()<Enter>
 nnoremap <silent> <Leader><CR> :e #<CR>
 
 nnoremap <silent> <Leader>B :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+nnoremap <silent> <Leader>p "+p
+
+nnoremap <silent> <Leader>y "+y

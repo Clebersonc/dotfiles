@@ -39,9 +39,9 @@ echo -e "Name       $(echo $url | sed -E 's/\/torrent\/[0-9]+\///g' | sed 's/_/ 
 echo -e "${info[*]}"\\n
 hash=$(echo "${info[*]}" | grep Hash | sed 's/Info Hash: //g')
 
-read -p "Do you want download? [y/N] " answer
+read -p "Do you want download? [Y/n] " answer
 
-if [[ ${answer,,} == 'y' ]]; then
+if [[ ${answer,,} != 'n' ]]; then
 
 	read -p "What is the destination: " path
 	~/.local/bin/webtorrent download $hash -o "$HOME/$path"

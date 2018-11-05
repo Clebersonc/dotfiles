@@ -524,8 +524,7 @@ endsnippet
 
 
 # doesn't expand when there is a word in front
-snippet /(^|(?<=\W))\./ "self." r
-self.
+snippet /(^|(?<=\W))\./ "self." r self.
 endsnippet
 
 snippet from "from module import name" b
@@ -575,14 +574,14 @@ if ${1:condition}:
 	${2:${VISUAL:pass}}
 endsnippet
 
-snippet ife "If / Else" b
+snippet ifel "If / Else" b
 if ${1:condition}:
 	${2:${VISUAL:pass}}
 else:
 	${3:pass}
 endsnippet
 
-snippet ifee "If / Elif / Else" b
+snippet elif "If / Elif / Else" b
 if ${1:condition}:
 	${2:${VISUAL:pass}}
 elif ${3:condition}:

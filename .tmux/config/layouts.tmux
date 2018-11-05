@@ -14,3 +14,10 @@ bind-key H \
 
 # man for w3m
  bind w new-window 'less ~/Documents/man/w3m.txt'
+
+ unbind d
+ bind d new-window 'less ~/Documents/man/daily.txt'
+
+ unbind p
+ bind p new-window "vim ~/Documents/pomo/$(date +'%d-%m-%y').txt"
+

@@ -8,4 +8,3 @@ xnoremap i_ <Esc>^vg_
 
 " Last selected area motion.
 onoremap gv :<C-u>normal! gv<Enter>
-

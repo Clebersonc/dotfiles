@@ -4,7 +4,10 @@
 
 # terminal emulator
 super + Return
-	kitty
+	~/.local/bin/st-light
+
+super + ctrl + Return
+	~/.local/bin/st-dark
 
 # program launcher
 super + @space
@@ -119,6 +122,8 @@ super + alt + shift {h,j,k,l}
 
 ######### MY PERSONAL KEYBINDS ###########
 
+super + p
+	~/.local/bin/pomo
 super + shift + m
     qutebrowser
 super + shift + n
@@ -158,10 +163,10 @@ XF86MonBrightnessDown
 
 # Media player controls
 XF86AudioPlay
-	playerctl play-pause
+	playerctl play-pause; mpvc --toggle
 XF86AudioStop
-	playerctl stop
+	playerctl stop; mpvc --kill
 XF86AudioNext
-	playerctl next
+	playerctl next; mpvc --track +1
 XF86AudioPrev
-	playerctl previous
+	playerctl previous; mpvc --track -1

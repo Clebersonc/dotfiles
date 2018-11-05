@@ -4,14 +4,24 @@ islight=$(ag background=light ~/.vim/plugin/settings.vim)
 
 if [[ $islight ]] {
 	~/.local/bin/rpl light dark ~/.vim/plugin/settings.vim &>/dev/null
-	~/.local/bin/rpl light dark ~/.config/kitty/kitty.conf &>/dev/null
-    wal -s --theme /home/ctroy/.themes/base16-gruvbox-hard.json &>/dev/null
+	~/.local/bin/rpl 'set recolor-darkcolor "#232323"' 'set recolor-lightcolor "#232323"' ~/.config/zathura/zathurarc &>/dev/null
+	~/.local/bin/rpl 'set recolor-lightcolor "#f2e5bc"' 'set recolor-darkcolor "#f2e5bc"' ~/.config/zathura/zathurarc &>/dev/null
+	~/.local/bin/rpl 'solarized-light-all-sites' 'gruvbox-all-sites' ~/.config/qutebrowser/config.py &>/dev/null
+	~/.local/bin/rpl '#f2e5bc' '#232323' ~/.config/qutebrowser/config.py &>/dev/null
+    wal -s --theme /home/ctroy/.config/themes/base16-gruvbox-hard.json &>/dev/null
 	/usr/bin/feh --bg-scale /home/ctroy/Pictures/dark.jpg &>/dev/null
-	pkill kitty &>/dev/null && kitty tmux attach &
+	qutebrowser :restart &>/dev/null
+	pkill st-light
+	# ~/.local/bin/st-dark &>/dev/null
 } else {
 	~/.local/bin/rpl dark light ~/.vim/plugin/settings.vim &>/dev/null
-	~/.local/bin/rpl dark light ~/.config/kitty/kitty.conf &>/dev/null
-    wal -s --theme /home/ctroy/.themes/base16-gruvbox-soft.json &>/dev/null
+	~/.local/bin/rpl 'set recolor-lightcolor "#232323"' 'set recolor-darkcolor "#232323"' ~/.config/zathura/zathurarc &>/dev/null
+	~/.local/bin/rpl 'set recolor-darkcolor "#f2e5bc"' 'set recolor-lightcolor "#f2e5bc"' ~/.config/zathura/zathurarc &>/dev/null
+	~/.local/bin/rpl 'gruvbox-all-sites' 'solarized-light-all-sites' ~/.config/qutebrowser/config.py &>/dev/null
+	~/.local/bin/rpl '#232323' '#f2e5bc' ~/.config/qutebrowser/config.py &>/dev/null
+    wal -s --theme /home/ctroy/.config/themes/base16-gruvbox-soft.json &>/dev/null
 	/usr/bin/feh --bg-scale /home/ctroy/Pictures/light.jpg &>/dev/null
-	pkill kitty &>/dev/null && kitty tmux attach &
+	qutebrowser :restart &>/dev/null
+	pkill st-dark
+	# ~/.local/bin/st-light &>/dev/null
 }

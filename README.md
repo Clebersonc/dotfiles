@@ -11,10 +11,9 @@
 ### Desktop
 
 - [bspwm](https://github.com/baskerville/bspwm) - Tiling window manager based on binary space partitioning.
-- [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen) - A simple lock script for i3lock-color.
+- [slock-grubox](https://aur.archlinux.org/packages/slock-gruvbox/) - A simple screen locker for X.
 - [compton](https://github.com/chjj/compton) - X compositor that may fix tearing issues.
 - [dunst](https://github.com/dunst-project/dunst) - Customizable and lightweight notification-daemon.
-- [i3lock-color](https://github.com/eBrnd/i3lock-color) - An improved screenlocker based upon XCB and PAM with color configuration support.
 - [ly](https://github.com/cylgom/ly) - TUI display manager.
 - [pcmanfm](https://github.com/lxqt/pcmanfm-qt) - Extremely fast and lightweight file manager.
 - [polybar](https://github.com/jaagr/polybar) - A fast and easy-to-use status bar.

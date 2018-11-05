@@ -55,6 +55,7 @@
     background = "#076678"
     foreground = "#a8a8a8"
     timeout = 10
+    icon = /usr/share/icons/Adwaita/16x16/status/dialog-information.png
 
 [urgency_critical]
     background = "#d64e4e"

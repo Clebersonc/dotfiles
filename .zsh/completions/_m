@@ -1,0 +1,11 @@
+#compdef m
+typeset -A opt_args
+
+_values , $(ls /home/ctroy/Documents/man/)
+
+#_arguments '-f[man file]:filename:->files'
+#case "$state" in
+#    files)
+#		_values , $(ls /home/ctroy/Documents/man/)
+#	;;
+#esac

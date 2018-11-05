@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
 # A minimalistic pomodoro timer.
 # e.g. pomo 5 25 "Hello!"
-notify-send "Pomodoro start!" && sleep $((${1:-25} * 60)) && notify-send "($(date +%H:%M)) ${3:-Break time!}" && ding $((${2:-5} * 60)) &
+
+# Exit if /tmp/pomo.lock exists
+[ -f /tmp/pomo.lock ] && echo "Be careful! One pomodoro at a time." && exit
+
+# Create pomo.lock, sleep 1 sec and verify lock
+echo $$ > /tmp/pomo.lock
+sleep 1
+[ "x$(cat /tmp/pomo.lock)" == "x"$$ ] || exit
+
+# Do stuff
+notify-send "Pomodoro start!" && sleep $((${1:-25} * 60)) && notify-send "($(date +%H:%M)) ${3:-Break time!}" && ding && rm /tmp/pomo.lock &
