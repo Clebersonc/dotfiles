@@ -11,18 +11,6 @@ function! PackInit() abort
   packadd minpac
   " minpac is loaded.
   call minpac#init()
-  call minpac#add('k-takata/minpac', {'type': 'opt'})
-  call minpac#add('lilydjwg/colorizer', {'type': 'opt'})
-  call minpac#add('SirVer/UltiSnips', {'type': 'opt'})
-  call minpac#add('sunaku/vim-dasht', {'type': 'opt'})
-  call minpac#add('sjl/gundo.vim', {'type': 'opt'})
-  call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
-  call minpac#add('scrooloose/nerdtree', {'type': 'opt'})
-  call minpac#add('flipcoder/vim-textbeat', {'type': 'opt'})
-  call minpac#add('airodactyl/neovim-ranger', {'type': 'opt'})
-  call minpac#add('dansomething/vim-eclim', {'type': 'opt'})
-
-  " Additional plugins here.
   call minpac#add('w0rp/ale')
   call minpac#add('yuttie/comfortable-motion.vim')
   call minpac#add('editorconfig/editorconfig-vim')
@@ -33,6 +21,18 @@ function! PackInit() abort
   call minpac#add('flipcoder/vim-textbeat')
   call minpac#add('mhinz/vim-startify')
   call minpac#add('rhysd/vim-grammarous')
+
+  " Additional plugins here.
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+  call minpac#add('lilydjwg/colorizer', {'type': 'opt'})
+  call minpac#add('SirVer/UltiSnips', {'type': 'opt'})
+  call minpac#add('sunaku/vim-dasht', {'type': 'opt'})
+  call minpac#add('sjl/gundo.vim', {'type': 'opt'})
+  call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
+  call minpac#add('flipcoder/vim-textbeat', {'type': 'opt'})
+  call minpac#add('dansomething/vim-eclim', {'type': 'opt'})
+  call minpac#add('numirias/semshi', {'type': 'opt'})
+  call minpac#add('francoiscabrol/ranger.vim', {'type': 'opt'})
 
 endfunction
 
