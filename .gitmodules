@@ -19,6 +19,6 @@
 [submodule ".zsh/plugins/zsh-system-clipboard"]
 	path = .zsh/plugins/zsh-system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
-[submodule "/home/ctroy/.vim/pack/minpac/opt/minpac"]
-	path = /home/ctroy/.vim/pack/minpac/opt/minpac
+[submodule ".vim/pack/minpac/opt/minpac"]
+	path = .vim/pack/minpac/opt/minpac
 	url = https://github.com/k-takata/minpac.git
