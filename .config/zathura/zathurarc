@@ -22,8 +22,8 @@ set scroll-step 100
 set zoom-min 10
 
 # Change the white pdf background default color.
-set recolor-darkcolor "#232323"
-set recolor-lightcolor "#f2e5bc"
+set recolor-lightcolor "#232323"
+set recolor-darkcolor "#f2e5bc"
 
 
 # Activate recolor at startup.
@@ -62,8 +62,8 @@ set notification-bg "#90A959" #0B
 set notification-fg "#232323" #00
 
 #set recolor "true"
-#set recolor-darkcolor "#232323" #00
-#set recolor-lightcolor "#f2e5bc" #06
+#set recolor-lightcolor "#232323" #00
+#set recolor-darkcolor "#f2e5bc" #06
 #set recolor-reverse-video "true"
 #set recolor-keephue "true"
 

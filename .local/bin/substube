@@ -16,7 +16,21 @@ function sub_youtube () {
 	if [[ "$last" != "$current" ]]; then
 		~/.local/bin/rpl $last $current ~/Videos/subscriptions.txt
 		if [[ $4 == "subs" ]]; then
-			youtube-dl -f 18 --embed-sub --write-auto-sub "https://www.youtube.com$url_download"
+			youtube-dl -f 18 --embed-sub --write-sub --write-auto-sub --quiet "https://www.youtube.com$url_download" &
+			sleep 10
+			if [ `ls -1 ~/Videos/*.vtt 2>/dev/null | wc -l ` -gt 0 ]; then
+				for f in ~/Videos/*.vtt
+				do
+					$(ffmpeg -i "$f" "${f%.vtt}.srt")
+				done
+				rm ~/Videos/*.vtt
+				for f in ~/Videos/*.srt
+				do
+					$(awk '!a[$0]++' "$f" | sponge "$f")
+					$(ffmpeg -i "$f" "${f%.srt}.vtt")
+				done
+				rm ~/Videos/*.srt
+			fi
 		else
 			youtube-dl -f 18 "https://www.youtube.com$url_download"
 		fi

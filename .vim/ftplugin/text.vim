@@ -1,3 +1,9 @@
+" activate word completion.
+packadd ncm2-look.vim
+
+" activate ncm2 autocomplete.
+let g:ncm2#auto_popup = 1
+
 " Wrap lines longer than the width of the window.
 setlocal wrap
 " Always enable spell checking.

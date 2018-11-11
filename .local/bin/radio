@@ -1,0 +1,68 @@
+#!/bin/python
+
+import csv
+import click
+import random
+import subprocess as sp
+from os import path, getenv
+from colorama import Fore, Style
+
+
+bright = Fore.WHITE
+reset = Style.NORMAL + Fore.RESET
+cyan = Fore.LIGHTBLACK_EX
+
+
+def getfile():
+
+    path_file = 'Documents/sources/radio.csv'
+    return path.join(getenv('HOME'), path_file)
+
+
+def getstyle(i, color):
+
+    n = str(i) if i > 9 else "0" + str(i)
+    color = bright if color != bright else reset
+    return n, color
+
+
+def station(rand, links=[], color=bright, i=1):
+
+    with open(getfile(), 'r') as stations_file:
+
+        for row in csv.reader(stations_file, skipinitialspace=True):
+
+            n, color = getstyle(i, color)
+
+            if not rand:
+                if row[0][0] == '#':
+                    print('\n   ' + row[0])
+                    print('   ' + '--'*10)
+                    continue
+                else:
+                    print(cyan + '   ' + n + ' ' + color + row[0] + reset)
+                    i += 1
+
+            elif row[0][0] != '#':
+                name, url = [s.strip() for s in row]
+                links.append(url)
+
+    if not rand:
+        answer = int(input('\n Select news to open: '))
+    else:
+        answer = random.randint(1, len(links))
+
+    return links.pop(answer-1)
+
+
+@click.command()
+@click.option('-r', '--random', is_flag=True,
+              help="random play station.")
+def player(random):
+    '''Simple radio player.'''
+
+    sp.Popen(['mpv', '--no-terminal', station(random)])
+
+
+if __name__ == "__main__":
+    player()

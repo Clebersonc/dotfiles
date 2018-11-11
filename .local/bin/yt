@@ -7,6 +7,17 @@ import subprocess as sp
 from bs4 import BeautifulSoup as bs
 
 
+def selection(videos):
+    color = 'blue'
+    print()
+    for i, v in enumerate(videos):
+        n = str(i+1) if i > 8 else "0" + str(i+1)
+        color = 'blue' if color == 'green' else 'green'
+        click.secho(n + "\t" + v[0], fg=color)
+
+    return int(input('\nselect by number: '))
+
+
 def geturl(search, playlist):
     search = ' '.join(search)
     search = re.sub(' ', '+', search)
@@ -21,20 +32,12 @@ def geturl(search, playlist):
     for t in tags:
         videos.append((t.find('a').attrs['title'], t.find('a').attrs['href']))
 
-    i = 1
-    color = 'blue'
-    print()
-    for v in videos:
-        n = str(i) if i > 9 else "0" + str(i)
-        color = 'blue' if color == 'green' else 'green'
-        click.secho(n + "\t" + v[0], fg=color)
-        i += 1
-
-    video = int(input('\nselect by number: '))
-
-    vlink = videos[video-1][1].split('=')[-1]
+    video = selection(videos)
+    vlink = videos[video-1][1]
+    if re.search('list', vlink): playlist = True
+    href = vlink.split('=')[-1]
     urltype = '/watch?v=' if playlist is False else '/playlist?list='
-    vurl = 'https://www.youtube.com' + urltype + vlink
+    vurl = 'https://www.youtube.com' + urltype + href
     return vurl
 
 
@@ -45,16 +48,27 @@ def geturl(search, playlist):
 @click.option('-p', '--playlist', is_flag=True,
               help="Search for playlists.")
 @click.option('-s', '--shuffle', is_flag=True,
-              help="shuffle playlist.")
-def search(search, audio, playlist, shuffle):
+              help="Shuffle playlist.")
+@click.option('-d', '--debug', is_flag=True,
+              help="Debug mode.")
+@click.option('-f', '--format', default='140',
+              help="Format video type.")
+@click.option('-l', '--all-formats', 'list', is_flag=True,
+              help="List all video formats.")
+def search(search, audio, playlist, shuffle, debug, format, list):
     """ Simple cli for search videos. """
 
     url = geturl(search, playlist)
-    quality = '140' if audio or playlist is True else '18'
-    shuf = '' if shuffle is False else '--shuffle'
+    if audio:
+        format = '18'
+    shuffle = '' if shuffle is False else '--shuffle'
+    debug = '' if debug is True else '--no-terminal'
 
-    sp.Popen(['mpv', '--ytdl-format', quality, '--no-terminal', url,
-              '--input-ipc-server', '/tmp/mpvsocket', shuf])
+    if list:
+        sp.run(['youtube-dl', '-F', url])
+    else:
+        sp.Popen(['mpv', '--ytdl-format', format, debug, url,
+                 '--input-ipc-server', '/tmp/mpvsocket', shuffle])
 
 
 if __name__ == '__main__':

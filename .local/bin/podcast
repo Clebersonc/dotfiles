@@ -1,0 +1,85 @@
+#!/bin/python
+
+from dynmen import Menu
+import click
+import feedparser
+from colorama import Fore, Style
+import subprocess as sp
+import re
+import csv
+import datetime
+from os import getenv, path
+from dateutil import parser, tz
+
+bright = Fore.WHITE
+reset = Style.NORMAL + Fore.RESET
+cyan = Fore.LIGHTBLACK_EX
+
+
+
+def getfile(rss=dict()):
+
+    path_file = 'Documents/sources/podcast.csv'
+    podcast_file = path.join(getenv('HOME'), path_file)
+
+    with open(podcast_file, 'r') as pod_file:
+
+        for row in csv.reader(pod_file, skipinitialspace=True):
+                name, url = [s.strip() for s in row]
+                rss[name] = url
+
+    return rss
+
+def checkdate(pub, days_ago):
+
+    d = datetime.datetime.now() - datetime.timedelta(days=days_ago)
+    date = d.astimezone(tz.tzutc())
+    dt = parser.parse(pub)
+    dt = dt.astimezone(tz.tzutc())
+
+    return dt > date
+
+
+def getpodcast(url, days_ago, links=[], i=0, color=bright):
+
+    for episode in feedparser.parse(url).entries:
+
+        if checkdate(episode.published, days_ago):
+            links.append(episode.link)
+            n = str(i+1) if i > 8 else "0" + str(i+1)
+            color = bright if color != bright else reset
+            title = re.sub('\n', '', episode.title)
+            print(cyan + '   ' + n + ' ' + color + title + reset)
+            i += 1
+        else:
+            break
+
+
+@click.command()
+@click.option('-f', '--fuzz', is_flag=True,
+              help="fuzzi find podcast.")
+@click.option('-d', '--days-ago', 'days', default=15,
+              help="How much days ago to get podcast.")
+def play(fuzz, days):
+
+    rss = getfile()
+    links = []
+
+    if fuzz:
+        menu = Menu(['fzf', '--prompt=Feed:'])
+        search = ' '.join([menu(rss).selected])
+        getpodcast(rss[search], days, links)
+    else:
+        for name, url in rss.items():
+            print('\n    # ' + name.upper())
+            print('    ' + '--'*10)
+
+            getpodcast(url, days, links, len(links))
+
+    answer = int(input('\n Select podcast to play: '))
+
+    sp.Popen(['mpv', '--no-video', '--no-terminal', links.pop(answer-1)])
+
+
+if __name__ == "__main__":
+    play()

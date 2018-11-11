@@ -20,7 +20,10 @@ function! PackInit() abort
   call minpac#add('mhinz/vim-signify')
   call minpac#add('flipcoder/vim-textbeat')
   call minpac#add('mhinz/vim-startify')
-  call minpac#add('rhysd/vim-grammarous')
+  call minpac#add('roxma/nvim-yarp')
+  call minpac#add('ncm2/ncm2')
+  call minpac#add('ncm2/ncm2-bufword')
+  call minpac#add('ncm2/ncm2-path')
 
   " Additional plugins here.
   call minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -33,6 +36,9 @@ function! PackInit() abort
   call minpac#add('dansomething/vim-eclim', {'type': 'opt'})
   call minpac#add('numirias/semshi', {'type': 'opt'})
   call minpac#add('francoiscabrol/ranger.vim', {'type': 'opt'})
+  call minpac#add('rhysd/vim-grammarous', {'type': 'opt'})
+  call minpac#add('filipekiss/ncm2-look.vim', {'type': 'opt'})
+  call minpac#add('ncm2/ncm2-jedi', {'type': 'opt'})
 
 endfunction
 

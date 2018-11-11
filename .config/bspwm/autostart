@@ -33,4 +33,6 @@ dunst &
 # Usbstick automount.
 udiskie &
 
+noip2
+
 # vim:ft=sh

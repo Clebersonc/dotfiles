@@ -48,7 +48,7 @@ c.content.pdfjs = False
 
 # List of user stylesheet filenames to use.
 # Type: List of File, or File
-c.content.user_stylesheets = '~/.config/qutebrowser/themes/solarized-light-all-sites.css'
+c.content.user_stylesheets = '~/.config/qutebrowser/themes/gruvbox-all-sites.css'
 
 # Timeout (in milliseconds) for partially typed key bindings. If the
 # current input forms only partial matches, the keystring will be
@@ -80,9 +80,14 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
                         'g': 'http://www.google.com/search?hl=en&source=hp&ie=ISO-8859-l&q={}',
                         'y': 'https://www.youtube.com/results?search_query={}',
                         'w': 'https://secure.wikimedia.org/wikipedia/en/w/index.php?title=Special%%3ASearch&search={}',
-                        'gh': 'https://github.com/search?q={}&type=Code'}
+                        'ts': 'http://tsear.ch/go?s={}',
+                        'ghc': 'https://github.com/search?q={}&type=Code',
+                        'gh': 'https://github.com/search?q={}'}
+
 
 # Bindings for normal mode
+config.bind(',b', 'set content.user_stylesheets  ~/.config/qutebrowser/themes/gruvbox-all-sites.css')
+config.bind(',B', 'set content.user_stylesheets  ~/.config/qutebrowser/themes/gruvbox-all-sites.css')
 config.bind(',a', 'hint links userscript mpv_audio')
 config.bind(',d', 'spawn --userscript dict')
 config.bind(',e', 'spawn --userscript exec')
@@ -439,7 +444,7 @@ c.colors.tabs.selected.even.bg = '#d5c4a1'
 # Background color for webpages if unset (or empty to use the theme's
 # color).
 # Type: QtColor
-c.colors.webpage.bg = '#f2e5bc'
+c.colors.webpage.bg = '#232323'
 
 # Font used in the completion widget.
 # Type: Font

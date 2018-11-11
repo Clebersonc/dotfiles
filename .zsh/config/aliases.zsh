@@ -26,8 +26,9 @@ alias dfc='dfc -dmT'
 alias f='ranger'
 alias l='locate'
 alias q='exit'
-alias s='sudo'
+alias s='sudo -E'
 alias v='nvim'
+alias python='bpython'
 
 # Global Aliases
 alias -g P='| pygmentize -f terminal256 -P style=monokai -l'

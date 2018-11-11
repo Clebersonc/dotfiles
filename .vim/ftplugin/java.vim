@@ -7,7 +7,7 @@ set shellpipe=2>
 set errorformat=%A%f:%l:\ %m,%C%m
 
 " Map to use eclim auto-complete with utisnips.
-inoremap <expr> <c-u> IsExpandable() ? "\<C-R>=UltiSnips#ExpandSnippet()\<Enter>" : "\<C-x>\<C-u>"
+imap <expr> <c-u> IsExpandable() ? "\<C-R>=UltiSnips#ExpandSnippet()\<Enter>" : "\<C-x>\<C-u>"
 
 
 " Gradle project mappings for run single java file, single test or build project.

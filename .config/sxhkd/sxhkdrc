@@ -163,10 +163,10 @@ XF86MonBrightnessDown
 
 # Media player controls
 XF86AudioPlay
-	playerctl play-pause; mpvc --toggle
+	playerctl play-pause;
 XF86AudioStop
-	playerctl stop; mpvc --kill
+	playerctl stop; pkill mpv;
 XF86AudioNext
-	playerctl next; mpvc --track +1
+	playerctl next;
 XF86AudioPrev
-	playerctl previous; mpvc --track -1
+	playerctl previous;

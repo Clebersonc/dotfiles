@@ -11,7 +11,7 @@ set viminfo=!,'100,<50,s10,h
 execute printf('set viminfo+=n~/.vim/cache/share/%s', has('nvim') ? 'nviminfo' : 'viminfo')
 
 " Colors
- set background=light " Choose light colors if available.
+ set background=dark " Choose dark colors if available.
  colorscheme gruvbox " Color scheme.
  set termguicolors " Enable True Color support.
 
@@ -36,6 +36,9 @@ set report=0 " Threshold for reporting number of lines changed.
 set sessionoptions=blank,buffers,curdir,folds,help,localoptions,resize,tabpages,winsize " Options for `mksession` command.
 set shellpipe=&> " Fix potentional screen flashing problems with not using `tee`.
 set shortmess=filmnrwxoOstTIc " Use abbreviations and short messages in command menu line.
+ autocmd BufEnter * call ncm2#enable_for_buffer()
+let g:ncm2_look_enabled = 1
+let g:ncm2_look_mark = 'dict'
 set sidescroll=5 " Columns to scroll horizontally when cursor is moved off the screen.
 set sidescrolloff=5 " Minimum number of screen columns to keep to cursor right.
 set synmaxcol=200 " Maximum column in which to search for syntax items.
@@ -49,7 +52,7 @@ if has('nvim') | set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cu
 if has('nvim') | set inccommand=nosplit | endif " Show live substitution results as you type.
 
 " Interface
-set cursorline " Highlight the line background of the cursor.
+set cursorline " Highdark the line background of the cursor.
 set fillchars=vert:⏐ " Characters to fill the status lines and vertical separators.
 set laststatus=2 " Always show the status line.
 set linebreak " Wrap lines in 'breakat', rather than at the last character.
@@ -70,7 +73,7 @@ set formatprg=par\ -w80 " External formatter program that will be used with `gq`
 
 " Completion
 set complete=.,w,b,k,t " Options for keyword completion.
-set completeopt=longest,menuone " Options for insert mode completion.
+set completeopt=noinsert,menuone,noselect " Options for insert mode completion.
 set path=.,** " Use recursive file search.
 
 " Indentation
@@ -92,7 +95,7 @@ let &grepprg = 'ag' " Program to use for the :grep command.
 set grepformat=%f:%l:%c:%m,%f:%l:%m " Format to recognize for the :grep command output.
 set ignorecase " Make default search is not case sensitive.
 set incsearch " Instantly show results when you start searching.
-set nohlsearch " Disable highlight the matched search results by default.
+set nohlsearch " Disable highdark the matched search results by default.
 set smartcase " If a uppercase character is entered, the search will be case sensitive.
 
 " Backup
@@ -122,4 +125,8 @@ set wildcharm=<C-z> " The key to start wildcard expansion inside macro.
 set wildignorecase " Ignore case when completing in command menu.
 set wildmenu " Command-line completion operates in an enhanced mode.
 set wildmode=full " Wildmenu options.
+
+set t_8f=^[[38;2;%lu;%lu;%lum        " set foreground color
+set t_8b=^[[48;2;%lu;%lu;%lum        " set background color
+set t_Co=256                         " Enable 256 colors
 

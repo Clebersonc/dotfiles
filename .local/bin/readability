@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+#from __future__ import absolute_import
+import click
+import requests
+from bs4 import BeautifulSoup
+import codecs, os
+from readability.readability import Document
+import webbrowser
+
+
+@click.command()
+@click.argument('url')
+def ReadMode(url):
+    tmpfile = os.path.expanduser('/tmp/readability.html')
+    if not os.path.exists(os.path.dirname(tmpfile)):
+        os.makedirs(os.path.dirname(tmpfile))
+
+    source = requests.get(url)
+    doc = Document(source.content)
+    content = doc.summary().replace('<html>', '<html><head><div><h1><span>%s</span></h1></div></head>' % doc.title())
+    center  = content.replace('</span></h1></div></head>', '</span> <style> .a { padding-left: 220px; width: 850px;  align-items: center; justify-content: center; display:inline-block; text-align:justify; } </style></h1></div></head>')
+    divs = center.replace('<html>', '<html><div class="a">')
+    divsb = divs.replace('</html>', '</div></html>')
+    soup = BeautifulSoup(divsb, 'lxml')
+
+    with codecs.open(tmpfile, 'w', 'utf-8') as target:
+        target.write('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />')
+        target.write(soup.prettify())
+
+    webbrowser.open(tmpfile)
+
+
+if __name__ == "__main__":
+    ReadMode()

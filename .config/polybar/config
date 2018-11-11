@@ -83,7 +83,7 @@ font-3 = NotoSans-Regular:size=8;-1
 font-4 = MaterialIcons:size=10;-1
 font-5 = Termsynu:size=8:antialias=false;0
 
-modules-left = player-cmus
+modules-left = playerctl
 modules-right =  cpu memory
 
 [module/bspwm]
@@ -272,14 +272,11 @@ menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu_open-0
 
-[module/player-cmus]
+[module/playerctl]
 type = custom/script
-exec = sh ~/.config/polybar/scripts/cmus.sh
-exec-if = cmus-remote -Q
+exec = ~/.config/polybar/scripts/playerctl.py
+exec-if = playerctl metadata
 interval = 1
-;click-left = cmus-remote -n
-;click-right = cmus-remote -r
-;click-middle = ~/polybar-scripts/player-cmus-toggle.sh
 
 [module/filesystem]
 type = internal/fs

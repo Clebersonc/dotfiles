@@ -4,7 +4,6 @@ import subprocess as sp
 import click
 import os
 import re
-from sh import fzf, ls
 
 editor = os.environ.get('EDITOR', 'vim')
 home = os.environ.get('HOME')

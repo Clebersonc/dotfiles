@@ -524,7 +524,8 @@ endsnippet
 
 
 # doesn't expand when there is a word in front
-snippet /(^|(?<=\W))\./ "self." r self.
+snippet /(^|(?<=\W))\./ "self." r
+self.
 endsnippet
 
 snippet from "from module import name" b
@@ -574,14 +575,14 @@ if ${1:condition}:
 	${2:${VISUAL:pass}}
 endsnippet
 
-snippet ifel "If / Else" b
+snippet ife "If / Else" b
 if ${1:condition}:
 	${2:${VISUAL:pass}}
 else:
 	${3:pass}
 endsnippet
 
-snippet elif "If / Elif / Else" b
+snippet ifee "If / Elif / Else" b
 if ${1:condition}:
 	${2:${VISUAL:pass}}
 elif ${3:condition}:
@@ -636,7 +637,7 @@ endsnippet
 ######################
 
 snippet ae "Assert equal" b
-self.assertEqual(${1:${VISUAL:first}},${2:second})
+self.assertEqual(${1:${VISUAL:first}}, ${2:second})
 endsnippet
 
 snippet at "Assert True" b
@@ -648,7 +649,7 @@ self.assertFalse(${1:${VISUAL:expression}})
 endsnippet
 
 snippet aae "Assert almost equal" b
-self.assertAlmostEqual(${1:${VISUAL:first}},${2:second})
+self.assertAlmostEqual(${1:${VISUAL:first}}, ${2:second})
 endsnippet
 
 snippet ar "Assert raises" b

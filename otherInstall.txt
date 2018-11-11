@@ -1,3 +1,11 @@
+systemctl sudo enable
+	noip2
+	fail2ban
+	dhcpcd
+
+systemctl user enable
+	dunst
+
 pacman
 	calibre
 	gimp
@@ -58,6 +66,10 @@ aur
 	fetchmirrors
 	python-notify2
 	mpvc-git
+	namebench
+	noip
+	pyradio-git
+	mpv-mpris
 
 games
 	gnome-chess, engine fruit

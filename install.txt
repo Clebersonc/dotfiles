@@ -87,3 +87,7 @@ calibre
 gimp
 gradle
 weechat
+fail2ban
+bind-tools
+words
+bpython
