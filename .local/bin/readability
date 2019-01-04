@@ -18,7 +18,7 @@ def ReadMode(url):
     source = requests.get(url)
     doc = Document(source.content)
     content = doc.summary().replace('<html>', '<html><head><div><h1><span>%s</span></h1></div></head>' % doc.title())
-    center  = content.replace('</span></h1></div></head>', '</span> <style> .a { padding-left: 220px; width: 850px;  align-items: center; justify-content: center; display:inline-block; text-align:justify; } </style></h1></div></head>')
+    center  = content.replace('</span></h1></div></head>', '</span> <style> p { font-size: 140%; line-height: 25px; } .a { padding-left: 320px; width: 700px;  align-items: center; justify-content: center; display:inline-block; text-align:justify; } </style></h1></div></head>')
     divs = center.replace('<html>', '<html><div class="a">')
     divsb = divs.replace('</html>', '</div></html>')
     soup = BeautifulSoup(divsb, 'lxml')

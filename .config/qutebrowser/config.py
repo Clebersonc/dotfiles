@@ -6,17 +6,17 @@
 # Uncomment this to still load settings configured via autoconfig.yml
 # config.load_autoconfig()
 
+c.url.start_pages = "https://calendar.google.com/"
 # Aliases for commands. The keys of the given dictionary are the
 # aliases, while the values are the commands they map to.
 # Type: Dict
 c.aliases = {'w': 'session-save',
              'q': 'quit',
              'wq': 'quit --save',
-             'ge': 'open -t https://wiki.archlinux.org/index.php/Forum_Etiquette',
-             'gp': 'open -t http://127.0.0.1:8080',
-             'gr': 'open -t https://feedbin.com/',
              'gs': 'open -t https://unix.stackexchange.com',
-             ',t': 'open -t https://web.telegram.org'}
+             'tele': 'open -t https://web.telegram.org',
+             'timer': 'open -t https://fitlb.com/tabata-timer'
+             }
 
 # Turn on Qt HighDPI scaling. This is equivalent to setting
 # QT_AUTO_SCREEN_SCALE_FACTOR=1 in the environment. It's off by default
@@ -82,7 +82,8 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
                         'w': 'https://secure.wikimedia.org/wikipedia/en/w/index.php?title=Special%%3ASearch&search={}',
                         'ts': 'http://tsear.ch/go?s={}',
                         'ghc': 'https://github.com/search?q={}&type=Code',
-                        'gh': 'https://github.com/search?q={}'}
+                        'gh': 'https://github.com/search?q={}'
+                        }
 
 
 # Bindings for normal mode
@@ -125,6 +126,9 @@ config.set('content.javascript.enabled', True, '*://www.youtube.com/*')
 config.set('content.javascript.enabled', True, '*://www.gmail.com/*')
 config.set('content.javascript.enabled', True, '*://www.github.com/*')
 config.set('content.javascript.enabled', True, '*://www.reddit.com/*')
+config.set('content.javascript.enabled', True, '*://twitter.com/*')
+config.set('content.javascript.enabled', True, '*://web.telegram.org/*')
+config.set('content.javascript.enabled', True, '*://fitlb.com/*')
 
 # Disable images automatically load in web pages.
 # Type: Bool

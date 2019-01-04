@@ -14,6 +14,7 @@ alias pbcopy="xclip -selection clipboard" # Copy terminal output.
 alias pbpaste="xclip -selection clipboard -o" # Paste text on clipboard.
 alias ls='ls --almost-all --classify --color=always --group-directories-first --ignore=.pki --ignore=.thumbnails --ignore=.icons --ignore=.gtkrc-2.0 --ignore=.esd_auth --ignore=eclipse-workspace --ignore=.npm --ignore=.gnupg --ignore=.ssh --ignore=.tooling --ignore=.eclim --ignore=.gradle --ignore=.swt --ignore=.eclipse --ignore=.npmrc --ignore=workbench.xmi --ignore=.fasd --ignore=.fehbg --ignore=Xauthority --ignore=.gitmodules --ignore=.dircolors --ignore=.mono --ignore=.grip --ignore=.httpie --ignore=.stardict --ignore=.gcalcli_cache --ignore=.gcalcli_oauth --ignore=.git --ignore=.android --ignore=.lyxauth --ignore=.sdcv_history'
 alias sdcv='sdcv --color -01'
+alias ddgr='ddgr -n 8'
 #alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
 #alias lsd="command ls -A --classify | grep '/' | column"
 #alias lsf='command ls -A --classify | grep --invert-match '/$' | column'
@@ -38,15 +39,46 @@ alias -g NE='2>/dev/null' # No sterr.
 alias -g NO='&>/dev/null' # No stout and sterr (shorthand for 1>/dev/null 2>&1).
 
 # Yay
-alias y='yay'
-alias yn='yay --noconfirm'
-alias yun='yay -Yc'
-alias yst='yay -Ps'
-alias ys='yay -S'
-alias ysn='yay -S --noconfirm'
-alias yr='yay -Rns'
-alias yrn='yay -Rns --noconfirm'
-alias yi='yay -Si'
+# alias y='yay'
+# alias yn='yay --noconfirm'
+# alias yun='yay -Yc'
+# alias yst='yay -Ps'
+# alias ys='yay -S'
+# alias ysn='yay -S --noconfirm'
+# alias yr='yay -Rns'
+# alias yrn='yay -Rns --noconfirm'
+# alias yi='yay -Si'
+
+# Pacman
+alias p='sudo pacman'
+alias psy='sudo pacman -S'
+alias psn='sudo pacman -S --noconfirm'
+alias pss='sudo pacman -Ss'
+alias pi='sudo pacman -Qi' # info
+alias pl='sudo pacman -Ql' # list all files from installed package
+alias pup='sudo pacman -Syu' # Update system
+alias prs='sudo pacman -Rns' # Remove packages and dependencies
+alias prn='sudo pacman -Rns --noconfirm' # Remove packages and dependencies
+
+# Pacman others
+alias pca='sudo pacman -Sc' # Remove cache packages
+alias pilp='sudo pacman -S --needed - < ' # Install from list
+alias pro='sudo pacman -Rns $(pacman -Qtdq)' # Remove orphans
+# Remove everything but not the base group
+alias pall='pacman -R $(comm -23 <(pacman -Qq | sort) <((for i in $(pacman -Qqg base); do pactree -ul "$i"; done) | sort -u))'
+# List all installed packages not base or base-devel groups.
+alias pli='comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)'
+# List all installed packages not base or base-devel groups with info.
+alias plii='expac -HM '%-20n\t%10d' $(comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base base-devel | sort))'
+# Update mirrorlist by best match from speed test.
+alias upmirror='sudo reflector --verbose --latest 40 --number 10 --sort rate --protocol http --save /etc/pacman.d/mirrorlist'
+
+# Trizen
+alias t='trizen'
+alias ts='trizen -S'
+alias tn='trizen --noconfirm'
+alias tsn='trizen -S --noconfirm'
+alias trn='trizen -Rns --noconfirm'
 
 # Git
 alias g='git'

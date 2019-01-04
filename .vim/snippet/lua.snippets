@@ -1,0 +1,170 @@
+priority -50 #################################
+# Snippets for the Lua language #
+#################################
+snippet #! "Shebang header" b
+#!/usr/bin/env lua
+${0:#statement}
+endsnippet
+
+snippet !fun(ction)?! "New function" br
+function ${1:new_function}(${2:args})
+	${0:#statement}
+end
+endsnippet
+
+snippet forp "pair for loop" b
+for ${1:name},${2:val} in pairs(${3:table_name}) do
+	${0:#statement}
+end
+endsnippet
+
+snippet fori "ipair for foop" b
+for ${1:idx},${2:val} in ipairs(${3:table_name}) do
+	${0:#statement}
+end
+endsnippet
+
+snippet for "numeric for loop" b
+for ${1:i}=${2:first},${3:last}${4/^..*/(?0:,:)/}${4:step} do
+	${0:#statement}
+end
+endsnippet
+
+snippet do "do block"
+do
+	${0:#statement}
+end
+endsnippet
+
+snippet repeat "repeat loop" b
+repeat
+	${1:#statement}
+until ${0:#statement}
+endsnippet
+
+snippet while "while loop" b
+while ${1:#statement} do
+	${0:#statement}
+end
+endsnippet
+
+snippet if "if statement" b
+if ${1:#statement} then
+	${0:#statement}
+end
+endsnippet
+
+snippet ife "if/else statement" b
+if ${1:#statement} then
+	$2
+else
+	${0:#statement}
+end
+endsnippet
+
+snippet eif "if/elseif statement" b
+if ${1:#statement} then
+	$2
+elseif $3 then
+	${0:#statement}
+end
+endsnippet
+
+snippet eife "if/elseif/else statement" b
+if ${1:#statement} then
+	$2
+elseif $3 then
+	$4
+else
+	${0:#statement}
+end
+endsnippet
+
+snippet pcall "pcall statement" b
+local ok, err = pcall(${1:your_function})
+if not ok then
+	handler(${2:ok, err})
+${3:else
+	success(${4:ok, err})
+}end
+endsnippet
+
+snippet local "local x = 1"
+local ${1:x} = ${0:1}
+endsnippet
+
+## Callback functions
+snippet load
+function love.load()
+	${0:#statement}
+end
+endsnippet
+
+snippet update
+function love.update(dt)
+	${0:#statement}
+end
+endsnippet
+
+snippet draw
+function love.draw()
+	${0:#statement}
+end
+endsnippet
+
+snippet kp
+function love.keypressed(k, isRepeat)
+	${0:#statement}
+end
+endsnippet
+
+snippet kr
+function love.keyreleased(k)
+	${0:#statement}
+end
+endsnippet
+
+snippet mp
+function love.mousepressed(x, y, button)
+	${0:#statement}
+end
+endsnippet
+
+snippet mr
+function love.mousereleased(x, y, button
+	${0:#statement}
+end
+endsnippet
+
+##
+## Modules
+snippet lg
+love.graphics
+endsnippet
+
+snippet lw
+love.window
+endsnippet
+
+snippet ls
+love.sound
+endsnippet
+
+snippet la
+love.audio
+endsnippet
+
+snippet lt
+love.timer
+endsnippet
+
+snippet lp
+love.physics
+endsnippet
+
+snippet lm
+love.math
+endsnippet
+
+
+# vim:ft=snippets:

@@ -16,7 +16,6 @@ reset = Style.NORMAL + Fore.RESET
 cyan = Fore.LIGHTBLACK_EX
 
 
-
 def getfile(rss=dict()):
 
     path_file = 'Documents/sources/websiterss.csv'
@@ -30,19 +29,24 @@ def getfile(rss=dict()):
 
     return rss
 
+
 def checkdate(pub, days_ago):
 
+    timezone = re.compile('(EDT|GMT|EST)')
     d = datetime.datetime.now() - datetime.timedelta(days=days_ago)
-    date = d.astimezone(tz.tzutc())
-    dt = parser.parse(pub)
-    dt = dt.astimezone(tz.tzutc())
+    date = d.replace(tzinfo=None)
+    if re.findall(timezone, pub):
+        dt = parser.parse(' '.join(pub.split()[:-1]))
+    else:
+        dt = parser.parse(pub)
+    dt = dt.replace(tzinfo=None)
 
     return dt > date
 
 
-def getnews(url, days_ago, links=[], i=0, color=bright):
+def getnews(url, days_ago, number, links=[], i=0, color=bright):
 
-    for news in feedparser.parse(url).entries:
+    for news in feedparser.parse(url).entries[:number]:
 
         if checkdate(news.published, days_ago):
             links.append(news.link)
@@ -62,7 +66,9 @@ def getnews(url, days_ago, links=[], i=0, color=bright):
               help="Show the normal page.")
 @click.option('-d', '--days-ago', 'days', default=1,
               help="How much days ago to get podcast.")
-def play(fuzz, days, normal):
+@click.option('-n', '--number', default=-1,
+              help="How much entries to get.")
+def play(fuzz, days, normal, number):
 
     rss = getfile()
     links = []
@@ -70,22 +76,30 @@ def play(fuzz, days, normal):
     if fuzz:
         menu = Menu(['fzf', '--prompt=Feed:'])
         search = ' '.join([menu(rss).selected])
-        getnews(rss[search], days, links)
+        getnews(rss[search], days, number, links)
     else:
         for name, url in rss.items():
             print('\n    # ' + name.upper())
             print('    ' + '--'*10)
 
-            getnews(url, days, links, len(links))
+            getnews(url, days, number, links, len(links))
 
-    answer = int(input('\n Select podcast to play: '))
+    answer = input('\n Select article to read: ')
 
-    if normal:
-        sp.Popen(['qutebrowser', links.pop(answer-1)], stdout=sp.PIPE,
-                stderr=sp.DEVNULL, universal_newlines=True)
-    else:
-        sp.Popen(['readability', links.pop(answer-1)], stdout=sp.PIPE,
-                stderr=sp.DEVNULL, universal_newlines=True)
+    print()
+    i = 0
+    with click.progressbar(length=len(answer.split())*2, label='Opening feeds') as bar:
+        for a in answer.split():
+            sp.run(['sleep', '1'])
+            bar.update(i+1)
+            sp.run(['sleep', '2'])
+            if normal:
+                sp.run(['qutebrowser', links[int(a)-1]], stdout=sp.PIPE,
+                         stderr=sp.DEVNULL, universal_newlines=True)
+            else:
+                sp.run(['readability', links[int(a)-1]], stdout=sp.PIPE,
+                         stderr=sp.DEVNULL, universal_newlines=True)
+            bar.update(i+1)
 
 
 if __name__ == "__main__":

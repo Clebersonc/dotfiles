@@ -1,8 +1,12 @@
+# Set the default shell
+set-option -g default-shell "/usr/bin/zsh"
+
 # Set default prefix.
 set-option -g prefix F1
 
-# Default shell.
-set-option -g default-shell /bin/zsh
+# Terminal overrides.
+set-option -g default-terminal "tmux-256color"
+set-option -ga terminal-overrides ",col:Tc"
 
 # Default term.
 set-option -g default-terminal "xterm-256color"
@@ -37,5 +41,3 @@ set-option -g visual-activity off
 # Enable supported focus events.
 set-option -g focus-events on
 
-# Terminal overrides.
-set-option -g -a terminal-overrides ',xterm-256color:Tc' # True color support.

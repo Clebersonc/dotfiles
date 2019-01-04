@@ -18,6 +18,8 @@ fi
 
 echo "${pomo}" > /tmp/pomo.cnt
 
+playerctl pause
+
 aplay $DEFAULT &>/dev/null &
 
 slock

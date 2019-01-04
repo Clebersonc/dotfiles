@@ -7,6 +7,17 @@ systemctl user enable
 	dunst
 
 pacman
+
+	vimiv
+	zathura
+	zathura-cb
+	zathura-pdf-mupdf
+	papirus-icon-theme
+	qutebrowser
+	fzf
+	mpv
+	atool
+
 	calibre
 	gimp
 	gradle
@@ -14,7 +25,6 @@ pacman
 	hunspell-pt-br
 	inkscape
 	libreoffice-fresh-pt-br
-	qutebrowser
 	steamcmd
 	typora
 	android-tools
@@ -26,12 +36,31 @@ pacman
 	timidity-freepats
 	lfpt
 	nethogs
+	nnn
+	cmus
+	pcmanfm
+	pygmentize
+	ranger
+	youtube-dl
+	flake8
+	pass
+	gradle
+	weechat
+	bpython
+	reflactor
+	highlight
+	pkgfile
 
 aur
+	xkbset
 	nerd-fonts-dejavu-complete
+	polybar
+	slock-gruvbox
+	mpv-mpris
+	trizen
+
 	cava
 	cht.sh
-	polybar
 	rarcrack
 	rpl
 	rtv
@@ -56,7 +85,6 @@ aur
 	python-readability-lxml
 	neovim-symlinks
 	python-jedi
-	slock-gruvbox
 	wcalc
 	nodejs
 	webtorrent-cli
@@ -69,7 +97,8 @@ aur
 	namebench
 	noip
 	pyradio-git
-	mpv-mpris
+	0cc-famitracker
+	scrcpy
 
 games
 	gnome-chess, engine fruit
@@ -80,6 +109,7 @@ games
 
 python
 	vint
+	advance-touch
 
 github
 	https://github.com/flipcoder/textbeat

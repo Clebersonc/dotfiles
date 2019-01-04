@@ -135,3 +135,5 @@ Pictures
 .weechat/
 usbstick/
 yt.py
+.local/bin/haxor-news
+.local/bin/hn

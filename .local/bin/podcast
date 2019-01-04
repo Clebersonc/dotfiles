@@ -40,9 +40,9 @@ def checkdate(pub, days_ago):
     return dt > date
 
 
-def getpodcast(url, days_ago, links=[], i=0, color=bright):
+def getpodcast(url, days_ago, number, links=[], i=0, color=bright):
 
-    for episode in feedparser.parse(url).entries:
+    for episode in feedparser.parse(url).entries[:number]:
 
         if checkdate(episode.published, days_ago):
             links.append(episode.link)
@@ -60,7 +60,9 @@ def getpodcast(url, days_ago, links=[], i=0, color=bright):
               help="fuzzi find podcast.")
 @click.option('-d', '--days-ago', 'days', default=15,
               help="How much days ago to get podcast.")
-def play(fuzz, days):
+@click.option('-n', '--number', default=-1,
+              help="How much episodes to show.")
+def play(fuzz, days, number):
 
     rss = getfile()
     links = []
@@ -68,13 +70,13 @@ def play(fuzz, days):
     if fuzz:
         menu = Menu(['fzf', '--prompt=Feed:'])
         search = ' '.join([menu(rss).selected])
-        getpodcast(rss[search], days, links)
+        getpodcast(rss[search], days, number, links)
     else:
         for name, url in rss.items():
             print('\n    # ' + name.upper())
             print('    ' + '--'*10)
 
-            getpodcast(url, days, links, len(links))
+            getpodcast(url, days, number, links, len(links))
 
     answer = int(input('\n Select podcast to play: '))
 

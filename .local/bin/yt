@@ -51,24 +51,31 @@ def geturl(search, playlist):
               help="Shuffle playlist.")
 @click.option('-d', '--debug', is_flag=True,
               help="Debug mode.")
-@click.option('-f', '--format', default='140',
+@click.option('-f', '--format', default='18',
               help="Format video type.")
-@click.option('-l', '--all-formats', 'list', is_flag=True,
-              help="List all video formats.")
-def search(search, audio, playlist, shuffle, debug, format, list):
+@click.option('-F', '--all-formats', 'list', is_flag=True,
+              help="List all formats.")
+@click.option('-b', '--best-quality', 'best', is_flag=True,
+              help="Automatic select the best video quality.")
+@click.option('-d', '--download', is_flag=True,
+              help="Download video.")
+def search(search, audio, playlist, shuffle, debug, format, list, best, download):
     """ Simple cli for search videos. """
 
     url = geturl(search, playlist)
     if audio:
-        format = '18'
+        format = '140'
+    elif best:
+        format = 'bestvideo[ext=mp4][height<=?1080][fps<=30]+bestaudio[ext=m4a]'
     shuffle = '' if shuffle is False else '--shuffle'
     debug = '' if debug is True else '--no-terminal'
 
     if list:
         sp.run(['youtube-dl', '-F', url])
+    if download:
+        sp.run(['youtube-dl', '-f', format, url])
     else:
-        sp.Popen(['mpv', '--ytdl-format', format, debug, url,
-                 '--input-ipc-server', '/tmp/mpvsocket', shuffle])
+        sp.Popen(['mpv', '--ytdl-format', format, debug, url, shuffle])
 
 
 if __name__ == '__main__':

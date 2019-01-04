@@ -25,7 +25,7 @@ date = ${xrdb:color7:#222}
 date2 = ${xrdb:color8:#222}
 
 [bar/top]
-monitor = VGA-0
+monitor = VGA-1
 width = 100%
 height = 23
 
@@ -40,9 +40,9 @@ padding-right = 2
 module-margin = 2
 
 font-0 = DejaVuSansMono Nerd Font:size=10;-1
-font-2 = FontAwesome:size=8;-2
-font-3 = unifont:size=6;-3
-font-1 = MaterialIcons:size=10;-3
+font-1 = FontAwesome:size=8;-2
+font-2 = unifont:size=6;-3
+font-3 = MaterialIcons:size=10;-3
 
 modules-left = bspwm
 modules-center = xwindow
@@ -58,7 +58,7 @@ tray-offset-y = 0
 tray-scale = 1.0
 
 [bar/bottom]
-monitor = VGA-0
+monitor = VGA-1
 bottom = true
 width = 100%
 height = 27

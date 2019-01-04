@@ -43,9 +43,10 @@ def station(rand, links=[], color=bright, i=1):
                     print(cyan + '   ' + n + ' ' + color + row[0] + reset)
                     i += 1
 
-            elif row[0][0] != '#':
-                name, url = [s.strip() for s in row]
-                links.append(url)
+            elif row[0][0] == '#':
+                continue
+            name, url = [s.strip() for s in row]
+            links.append(url)
 
     if not rand:
         answer = int(input('\n Select news to open: '))
