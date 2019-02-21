@@ -1,9 +1,9 @@
 # execute startx when system boot
-#if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-#  /usr/bin/env $HOME/.local/bin/hostname
-#  sleep 5
-#  exec startx &>/dev/null
-#fi
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  /usr/bin/env $HOME/.local/bin/hostname
+  sleep 5
+  exec startx &>/dev/null
+fi
 
 # Compile lesskey file if compile is needed.
 if ([[ ! -f $LESSKEY ]] || [[ $LESSKEYRC -nt $LESSKEY ]]) {

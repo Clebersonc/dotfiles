@@ -17,7 +17,7 @@ set-option -g status-left '   '
 
 # Window status
 set-option -g window-status-format '#[fg=white]⋅'
-set-option -g window-status-current-format '#[fg=white]∙'
+set-option -g window-status-current-format '#[fg=white]⊙'
 set-option -g window-status-separator "  "
 set-option -g status-justify left
 set-option -g status-right ''

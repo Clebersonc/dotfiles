@@ -218,3 +218,38 @@ function lb() {
 	local name=${1:-$(date '+%Y-%m-%d')}
 	vim ~/Documents/logbook/$name.txt
 }
+
+##
+# More options to command informations
+##
+function man() {
+	local command=$(echo "man\ntldr\nbro" | fzf \
+		--layout=reverse \
+		--color=dark)
+		#--preview='eval {} find')
+	eval command $command $1
+}
+
+##
+# Make multiple search.
+##
+function agm() {
+	ag --nobreak --nonumbers --noheading . | fzf
+
+##
+# Search on jrnl
+##
+}
+function fjrnl() {
+  title=$(jrnl --short | fzf --tac --no-sort) &&
+  jrnl -on "$(echo $title | cut -c 1-16)" $1
+}
+
+##
+# Fuzzy search files with locate.
+##
+function j() {
+	local selected=$(command locate / | fzf --reverse )
+	eval cd "$selected"
+    zle reset-prompt &>/dev/null
+}

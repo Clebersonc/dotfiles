@@ -137,7 +137,7 @@ Print
 
 ### Mute
 XF86AudioMute
-    amixer -q sset Master toggle
+	amixer -D pulse sset Master toggle &>/dev/null
 
 ### Master Volume
 XF86AudioRaiseVolume

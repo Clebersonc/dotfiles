@@ -17,6 +17,7 @@ pacman
 	fzf
 	mpv
 	atool
+	jrnl
 
 	calibre
 	gimp

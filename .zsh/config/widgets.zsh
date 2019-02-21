@@ -135,3 +135,4 @@ function custom-fzf-execute-widget() {
 
 	return $stat
 }
+

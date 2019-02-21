@@ -33,6 +33,6 @@ dunst &
 # Usbstick automount.
 udiskie &
 
-noip2
+fail2ban-server &
 
 # vim:ft=sh

@@ -3,8 +3,6 @@ source "$HOME/.zsh/plugins/zsh-z/zsh-z.plugin.zsh"
 source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
 	typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
 
-source "$ZDOTDIR/plugins/zsh-you-should-use/you-should-use.plugin.zsh"
-
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 source "$ZDOTDIR/plugins/zsh-autopair/autopair.zsh"
 

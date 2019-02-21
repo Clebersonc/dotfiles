@@ -1,6 +1,8 @@
 # Enable Vi emulation for ZLE.
 bindkey -v
 
+unset zle_bracketed_paste
+
 # Load dircolors.
 eval $(dircolors --sh "$HOME/.dircolors")
 
